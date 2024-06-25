@@ -1,0 +1,29 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: GettingStarted
+- file: Processing_in_R
+  sections:
+  - file: R/Preprocessing
+  - file: R/Graph_Generation
+  - file: R/SNF
+  - file: R/preprocess_functions
+- file: Processing_in_Python
+  sections: 
+  - file: Python/Preprocessing
+  - file: Python/SNF
+  - file: Python/Preprocess_Functions
+- file: Training_MOGDx
+  sections:
+  - file: MAIN/GNN_MME
+  - file: MAIN/Training
+  - file: MAIN/Utils
+- file: Executing_MOGDx
+  sections:
+  - file: Execution/Command_Line
+  - file: Execution/mogdx
+  - file: Execution/Jupyter_Notebook
+- file: contact
