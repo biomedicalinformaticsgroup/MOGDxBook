@@ -49,12 +49,21 @@ def main(args):
     print("Using %s device" % device)
     get_gpu_memory()
 
-    # Load data and metadata
-    datModalities , meta = data_parsing(args.input , args.modalities , args.target , args.index_col)
+    if not R_workflow : 
+        # Load data and metadata
+        datModalities , meta = data_parsing_python(args.input , args.modalities , args.target , args.index_col)
 
-    # Load SNF graph
-    graph_file = args.input + '/' + '_'.join(args.modalities) + '_graph.graphml'
-    g = nx.read_graphml(graph_file)
+        # Load Network
+        graph_file = args.input + '/' + '_'.join(args.modalities) + '_graph.graphml'
+        g = nx.read_graphml(graph_file)
+    else : 
+        # Load data and metadata
+        datModalities , meta = data_parsing_R(args.input , args.modalities , args.target , args.index_col)
+
+        # Load Network
+        graph_file = args.input + '/' + '_'.join(args.modalities) + '_graph.csv'
+        g = network_from_csv(graph_file , False)
+        nx.set_node_attributes(g , meta.astype('category').cat.codes , 'label')
 
     meta = meta.loc[sorted(meta.index)]
 

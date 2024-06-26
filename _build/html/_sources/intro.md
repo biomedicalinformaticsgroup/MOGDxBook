@@ -33,6 +33,3 @@ The performance of MOGDx was benchmarked on three distinct datasets from The Can
 </div>
 
 For more information find the preprint to our paper online [here](https://www.medrxiv.org/content/10.1101/2023.07.09.23292410v2)
-
-```{bibliography}
-```

@@ -5,7 +5,67 @@ import os
 import pickle
 import networkx as nx
 
-def data_parsing(DATA_PATH , MODALITIES ,TARGET , INDEX_COL) :
+def data_parsing_R(DATA_PATH , MODALITIES ,TARGET , INDEX_COL) :
+    """
+    Parse data from multiple modalities and return the parsed data along with metadata.
+
+    Args:
+        DATA_PATH (str): The path to the data.
+        MODALITIES (list): A list of modalities to be processed.
+        TARGET (str): The target variable.
+        INDEX_COL (str): The column to be used as the index.
+
+    Returns:
+        tuple: A tuple containing the parsed data for each modality and the metadata.
+    """
+
+    try : 
+        META_DATA_PATH = [f'{DATA_PATH}/datMeta_{mod}.csv' for mod in MODALITIES]
+    except : 
+        print(f'Modalities listed not found in data path {DATA_PATH}')
+
+    meta = pd.Series(dtype=str)
+    for path in META_DATA_PATH : 
+        meta_tmp = pd.read_csv(path , index_col=0)
+        
+        if INDEX_COL == '' :
+            pass
+        else :
+            meta_tmp = meta_tmp.set_index(INDEX_COL)
+            
+        meta = pd.concat([meta , meta_tmp[TARGET]])
+
+    meta = meta[~meta.index.duplicated(keep='first')] # Remove duplicated entries
+    meta.index = [str(i) for i in meta.index] # Ensures the patient ids are strings
+
+    try :
+        TRAIN_DATA_PATH = [f'{DATA_PATH}/datExpr_{mod}.csv' for mod in MODALITIES] # Looks for all expr file names
+    except : 
+        print(f'Modalities listed not found in data path {DATA_PATH}')
+
+    datModalities = {}
+    for path in TRAIN_DATA_PATH : 
+        print('Importing \t %s \n' % path)
+        
+        try : 
+            dattmp = np.genfromtxt(path , delimiter=',' , dtype = str)
+            if len(set(meta.index.astype(str)) & set(np.core.defchararray.strip(dattmp[1: , 0], '"'))) > 0 :
+                dattmp = pd.DataFrame(dattmp[1: , 1:] , columns=np.core.defchararray.strip(dattmp[0 ,1:], '"') , index = [int(i.strip('"')) for i in dattmp[1: , 0]])
+            else : 
+                dattmp = pd.DataFrame(dattmp[1: , 1:] , columns=[int(i.strip('"')) for i in dattmp[0,1:]] , index = np.core.defchararray.strip(dattmp[1: , 0], '"'))
+                dattmp = dattmp.T
+        except : 
+            dattmp = pd.read_csv(path , index_col=0)
+            if len(set(meta.index) & set(dattmp.columns)) > 0 :
+                dattmp = dattmp.T
+                
+        dattmp.index = [str(i) for i in dattmp.index] # Ensures the patient ids are strings
+        dattmp.name = path.split('/')[-1].split('_')[-1][:-4] #Assumes there is no '.' in file name as per specified naming convention. Can lead to erros down stream. Files should be modality_datEXpr.csv e.g. mRNA_datExpr.csv
+        datModalities[dattmp.name] = dattmp
+
+    return datModalities , meta
+
+def data_parsing_python(DATA_PATH , MODALITIES ,TARGET , INDEX_COL) :
     """
     Parse data from multiple modalities and return the parsed data along with metadata.
 
@@ -20,14 +80,13 @@ def data_parsing(DATA_PATH , MODALITIES ,TARGET , INDEX_COL) :
     """
 
     datModalities = {}
-    try : 
-        modalities = [mod for mod in MODALITIES]
-    except : 
-        print(f'Modalities listed not found in data path {DATA_PATH}')
-
     for i, mod in enumerate(modalities) : 
-        with open(f'{DATA_PATH}/{mod}_processed.pkl' , 'rb') as file : 
-            loaded_data = pickle.load(file)
+        try : 
+            with open(f'{DATA_PATH}/{mod}_processed.pkl' , 'rb') as file : 
+                loaded_data = pickle.load(file)
+        except : 
+            print(f'Modalities listed not found in data path {DATA_PATH}')
+
             
         if i == 0 : 
             datMeta = loaded_data['datMeta'].reset_index()[[INDEX_COL , TARGET]]

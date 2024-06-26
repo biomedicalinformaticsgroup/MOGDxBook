@@ -452,6 +452,7 @@ document.write(`
 <span class="n">snf_net</span> <span class="o">=</span> <span class="s1">&#39;mRNA_RPPA_DNAm_graph.graphml&#39;</span>
 <span class="n">index_col</span> <span class="o">=</span> <span class="s1">&#39;index&#39;</span>
 <span class="n">target</span> <span class="o">=</span> <span class="s1">&#39;paper_BRCA_Subtype_PAM50&#39;</span>
+<span class="n">R_workflow</span> <span class="o">=</span> <span class="kc">False</span>
 </pre></div>
 </div>
 </div>
@@ -464,18 +465,13 @@ document.write(`
 
 <span class="n">datModalities</span> <span class="p">,</span> <span class="n">meta</span> <span class="o">=</span> <span class="n">data_parsing</span><span class="p">(</span><span class="n">data_input</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;mRNA&#39;</span> <span class="p">,</span> <span class="s1">&#39;RPPA&#39;</span> <span class="p">,</span> <span class="s1">&#39;DNAm&#39;</span> <span class="p">]</span> <span class="p">,</span> <span class="n">target</span> <span class="p">,</span> <span class="n">index_col</span><span class="p">)</span>
 
-<span class="n">graph_file</span> <span class="o">=</span> <span class="n">data_input</span> <span class="o">+</span> <span class="s1">&#39;/../Networks/&#39;</span> <span class="o">+</span> <span class="n">snf_net</span>
-<span class="n">g</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">read_graphml</span><span class="p">(</span><span class="n">graph_file</span><span class="p">)</span>
-<span class="sd">&#39;&#39;&#39;g = network_from_csv(&#39;./../data/raw/mRNA_RPPA_graph.csv&#39; , False)</span>
-<span class="sd">nx.set_node_attributes(g , meta.astype(&#39;category&#39;).cat.codes , &#39;label&#39;)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">R_workflow</span> <span class="p">:</span> 
+    <span class="n">graph_file</span> <span class="o">=</span> <span class="n">data_input</span> <span class="o">+</span> <span class="s1">&#39;/../Networks/&#39;</span> <span class="o">+</span> <span class="n">snf_net</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">read_graphml</span><span class="p">(</span><span class="n">graph_file</span><span class="p">)</span>
+<span class="k">else</span> <span class="p">:</span> 
+    <span class="n">g</span> <span class="o">=</span> <span class="n">network_from_csv</span><span class="p">(</span><span class="s1">&#39;./../data/raw/mRNA_RPPA_graph.csv&#39;</span> <span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="n">nx</span><span class="o">.</span><span class="n">set_node_attributes</span><span class="p">(</span><span class="n">g</span> <span class="p">,</span> <span class="n">meta</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">codes</span> <span class="p">,</span> <span class="s1">&#39;label&#39;</span><span class="p">)</span>
 
-<span class="sd">graph_nodes= list(g.nodes)</span>
-
-<span class="sd">for node in graph_nodes : </span>
-<span class="sd">    if node in meta.index : </span>
-<span class="sd">        pass</span>
-<span class="sd">    else : </span>
-<span class="sd">        g.remove_node(node)&#39;&#39;&#39;</span>
 
 <span class="n">meta</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">sorted</span><span class="p">(</span><span class="n">meta</span><span class="o">.</span><span class="n">index</span><span class="p">)]</span>
 

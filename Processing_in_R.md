@@ -11,7 +11,6 @@ kernelspec:
   language: python
   name: python3
 ---
-
 # Processing in R
 
 ## Step 1 - Preprocessing
@@ -58,15 +57,15 @@ Run the R script `SNF.R`
        - mRNA.rda
      - miRNA
        - miRNA.rda
-  - TCGA
-    - BRCA
+    - processed
       - mRNA_processed.RData
       - miRNA_processed.RData
-      - raw
-        - datExpr_mRNA.csv
-        - datMeta_mRNA.csv
-        - mRNA_graph.csv
-        - datExpr_miRNA.csv
-        - datMeta_miRNA.csv
-        - miRNA_graph.csv
-        - mRNA_miRNA_graph.csv
+  - raw
+    - datExpr_mRNA.csv
+    - datMeta_mRNA.csv
+    - datExpr_miRNA.csv
+    - datMeta_miRNA.csv
+  - Network
+    - mRNA_graph.csv
+    - miRNA_graph.csv
+    - mRNA_miRNA_graph.csv
