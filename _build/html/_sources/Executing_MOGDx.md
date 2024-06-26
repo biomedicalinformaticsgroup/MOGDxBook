@@ -13,7 +13,7 @@ kernelspec:
 ---
 
 # Executing MOGDx
-MOGDx can be executed either by running the MOGDx.py module on the command line, or interactively using the MOGDx.ipyn Jupyter Notebook. 
+MOGDx can be executed either by running the `MOGDx.py` module on the command line, or interactively using the `MOGDx.ipynb` Jupyter Notebook. 
 
 ## Jupyter Notebook
 The Jupyter Notebook is designed to train one model on a single network. This is a useful tool to become accustomed to the running, training and expected outputs of the model. It is also useful for debugging any small errors with network generation e.g. missing patient nodes or patient nodes with no edges. 

@@ -204,6 +204,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requirements.html">Requirements</a></li>
 </ul>
 
     </div>
@@ -435,11 +436,33 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Load Data</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;./../../data/raw/</span><span class="si">{</span><span class="n">modality</span><span class="si">}</span><span class="s1">_preprocessed.pkl&#39;</span> <span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span> <span class="p">:</span> 
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;./../../data/TCGA-BRCA/</span><span class="si">{</span><span class="n">modality</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">modality</span><span class="si">}</span><span class="s1">.pkl&#39;</span> <span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span> <span class="p">:</span> 
     <span class="n">loaded_data</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
     
 <span class="n">count_mtx</span> <span class="o">=</span> <span class="n">loaded_data</span><span class="p">[</span><span class="s1">&#39;datExpr&#39;</span><span class="p">]</span>
 <span class="n">datMeta</span> <span class="o">=</span> <span class="n">loaded_data</span><span class="p">[</span><span class="s1">&#39;datMeta&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()[[</span><span class="s1">&#39;patient&#39;</span> <span class="p">,</span> <span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;patient&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">## Load Data</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;./../../data/TCGA-BRCA/</span><span class="si">{</span><span class="n">modality</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">modality</span><span class="si">}</span><span class="s1">.pkl&#39;</span> <span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span> <span class="p">:</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">loaded_data</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">count_mtx</span> <span class="o">=</span> <span class="n">loaded_data</span><span class="p">[</span><span class="s1">&#39;datExpr&#39;</span><span class="p">]</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.11/site-packages/IPython/core/interactiveshell.py:284,</span> in <span class="ni">_modified_open</span><span class="nt">(file, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">277</span> <span class="k">if</span> <span class="n">file</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}:</span>
+<span class="g g-Whitespace">    </span><span class="mi">278</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">279</span>         <span class="sa">f</span><span class="s2">&quot;IPython won&#39;t let you open fd=</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2"> by default &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">280</span>         <span class="s2">&quot;as it is likely to crash IPython. If you know what you are doing, &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">281</span>         <span class="s2">&quot;you can use builtins&#39; open.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">282</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">284</span> <span class="k">return</span> <span class="n">io_open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;./../../data/TCGA-BRCA/RPPA/RPPA.pkl&#39;
 </pre></div>
 </div>
 </div>
@@ -502,85 +525,7 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Performing Logistic Regression for Feature Selection
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">34</span>
-<span class="g g-Whitespace">     </span><span class="mi">31</span> <span class="n">datExpr</span> <span class="o">=</span> <span class="n">count_mtx</span><span class="o">.</span><span class="n">loc</span><span class="p">[:</span> <span class="p">,</span> <span class="p">(</span><span class="n">count_mtx</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)]</span> <span class="c1"># remove any genes with all 0 expression</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span> <span class="c1">### Perform Elastic Net</span>
-<span class="ne">---&gt; </span><span class="mi">34</span> <span class="n">extracted_feats</span> <span class="p">,</span> <span class="n">model</span> <span class="p">,</span> <span class="n">penalty</span> <span class="o">=</span> <span class="n">preprocess_functions</span><span class="o">.</span><span class="n">elastic_net</span><span class="p">(</span><span class="n">datExpr</span> <span class="p">,</span> <span class="n">datMeta</span><span class="p">[</span><span class="n">target</span><span class="p">]</span> <span class="p">,</span> <span class="n">n_feats</span><span class="o">=</span><span class="mi">175</span><span class="p">,</span> <span class="n">l1_ratio</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">36</span> <span class="c1">### Save the data</span>
-<span class="g g-Whitespace">     </span><span class="mi">37</span> <span class="n">data_to_save</span><span class="p">[</span><span class="s1">&#39;extracted_feats&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">extracted_feats</span><span class="p">))</span>
-
-<span class="nn">File ~/Library/CloudStorage/OneDrive-UniversityofEdinburgh/PhD_Research/Year3/MOGDx/MOGDxBook/mogdx-book/Python/./../MAIN/preprocess_functions.py:112,</span> in <span class="ni">elastic_net</span><span class="nt">(count_mtx, datMeta, n_feats, train_index, val_index, l1_ratio, num_epochs, device)</span>
-<span class="g g-Whitespace">     </span><span class="mi">95</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">96</span><span class="sd"> Applies the Elastic Net algorithm for feature selection and model training.</span>
-<span class="g g-Whitespace">     </span><span class="mi">97</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">109</span><span class="sd">     tuple: A tuple containing the extracted features, the trained model, and the Elastic Net penalty.</span>
-<span class="g g-Whitespace">    </span><span class="mi">110</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span> <span class="c1"># Initialize your model and the ElasticNet regularization term</span>
-<span class="ne">--&gt; </span><span class="mi">112</span> <span class="n">model</span> <span class="o">=</span> <span class="n">ElasticNetModel</span><span class="p">(</span><span class="n">input_dim</span><span class="o">=</span><span class="n">count_mtx</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">,</span> <span class="n">output_dim</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span> <span class="n">penalty</span> <span class="o">=</span> <span class="n">ElasticNetPenalty</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">l1_ratio</span><span class="o">=</span><span class="n">l1_ratio</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span> <span class="c1"># Define your loss function with ElasticNet regularization</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py:1160,</span> in <span class="ni">Module.to</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1156</span>         <span class="k">return</span> <span class="n">t</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">dtype</span> <span class="k">if</span> <span class="n">t</span><span class="o">.</span><span class="n">is_floating_point</span><span class="p">()</span> <span class="ow">or</span> <span class="n">t</span><span class="o">.</span><span class="n">is_complex</span><span class="p">()</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1157</span>                     <span class="n">non_blocking</span><span class="p">,</span> <span class="n">memory_format</span><span class="o">=</span><span class="n">convert_to_format</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1158</span>     <span class="k">return</span> <span class="n">t</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">dtype</span> <span class="k">if</span> <span class="n">t</span><span class="o">.</span><span class="n">is_floating_point</span><span class="p">()</span> <span class="ow">or</span> <span class="n">t</span><span class="o">.</span><span class="n">is_complex</span><span class="p">()</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span> <span class="n">non_blocking</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1160</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_apply</span><span class="p">(</span><span class="n">convert</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py:810,</span> in <span class="ni">Module._apply</span><span class="nt">(self, fn, recurse)</span>
-<span class="g g-Whitespace">    </span><span class="mi">808</span> <span class="k">if</span> <span class="n">recurse</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">809</span>     <span class="k">for</span> <span class="n">module</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">children</span><span class="p">():</span>
-<span class="ne">--&gt; </span><span class="mi">810</span>         <span class="n">module</span><span class="o">.</span><span class="n">_apply</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">812</span> <span class="k">def</span> <span class="nf">compute_should_use_set_data</span><span class="p">(</span><span class="n">tensor</span><span class="p">,</span> <span class="n">tensor_applied</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">813</span>     <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">_has_compatible_shallow_copy_type</span><span class="p">(</span><span class="n">tensor</span><span class="p">,</span> <span class="n">tensor_applied</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">814</span>         <span class="c1"># If the new tensor has compatible tensor type as the existing tensor,</span>
-<span class="g g-Whitespace">    </span><span class="mi">815</span>         <span class="c1"># the current behavior is to change the tensor in-place using `.data =`,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">820</span>         <span class="c1"># global flag to let the user control whether they want the future</span>
-<span class="g g-Whitespace">    </span><span class="mi">821</span>         <span class="c1"># behavior of overwriting the existing tensor or not.</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py:810,</span> in <span class="ni">Module._apply</span><span class="nt">(self, fn, recurse)</span>
-<span class="g g-Whitespace">    </span><span class="mi">808</span> <span class="k">if</span> <span class="n">recurse</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">809</span>     <span class="k">for</span> <span class="n">module</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">children</span><span class="p">():</span>
-<span class="ne">--&gt; </span><span class="mi">810</span>         <span class="n">module</span><span class="o">.</span><span class="n">_apply</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">812</span> <span class="k">def</span> <span class="nf">compute_should_use_set_data</span><span class="p">(</span><span class="n">tensor</span><span class="p">,</span> <span class="n">tensor_applied</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">813</span>     <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">_has_compatible_shallow_copy_type</span><span class="p">(</span><span class="n">tensor</span><span class="p">,</span> <span class="n">tensor_applied</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">814</span>         <span class="c1"># If the new tensor has compatible tensor type as the existing tensor,</span>
-<span class="g g-Whitespace">    </span><span class="mi">815</span>         <span class="c1"># the current behavior is to change the tensor in-place using `.data =`,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">820</span>         <span class="c1"># global flag to let the user control whether they want the future</span>
-<span class="g g-Whitespace">    </span><span class="mi">821</span>         <span class="c1"># behavior of overwriting the existing tensor or not.</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py:833,</span> in <span class="ni">Module._apply</span><span class="nt">(self, fn, recurse)</span>
-<span class="g g-Whitespace">    </span><span class="mi">829</span> <span class="c1"># Tensors stored in modules are graph leaves, and we don&#39;t want to</span>
-<span class="g g-Whitespace">    </span><span class="mi">830</span> <span class="c1"># track autograd history of `param_applied`, so we have to use</span>
-<span class="g g-Whitespace">    </span><span class="mi">831</span> <span class="c1"># `with torch.no_grad():`</span>
-<span class="g g-Whitespace">    </span><span class="mi">832</span> <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
-<span class="ne">--&gt; </span><span class="mi">833</span>     <span class="n">param_applied</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">834</span> <span class="n">should_use_set_data</span> <span class="o">=</span> <span class="n">compute_should_use_set_data</span><span class="p">(</span><span class="n">param</span><span class="p">,</span> <span class="n">param_applied</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">835</span> <span class="k">if</span> <span class="n">should_use_set_data</span><span class="p">:</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py:1158,</span> in <span class="ni">Module.to.&lt;locals&gt;.convert</span><span class="nt">(t)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1155</span> <span class="k">if</span> <span class="n">convert_to_format</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">t</span><span class="o">.</span><span class="n">dim</span><span class="p">()</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1156</span>     <span class="k">return</span> <span class="n">t</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">dtype</span> <span class="k">if</span> <span class="n">t</span><span class="o">.</span><span class="n">is_floating_point</span><span class="p">()</span> <span class="ow">or</span> <span class="n">t</span><span class="o">.</span><span class="n">is_complex</span><span class="p">()</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1157</span>                 <span class="n">non_blocking</span><span class="p">,</span> <span class="n">memory_format</span><span class="o">=</span><span class="n">convert_to_format</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1158</span> <span class="k">return</span> <span class="n">t</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">dtype</span> <span class="k">if</span> <span class="n">t</span><span class="o">.</span><span class="n">is_floating_point</span><span class="p">()</span> <span class="ow">or</span> <span class="n">t</span><span class="o">.</span><span class="n">is_complex</span><span class="p">()</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span> <span class="n">non_blocking</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/lib/python3.11/site-packages/torch/cuda/__init__.py:289,</span> in <span class="ni">_lazy_init</span><span class="nt">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">284</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">285</span>         <span class="s2">&quot;Cannot re-initialize CUDA in forked subprocess. To use CUDA with &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">286</span>         <span class="s2">&quot;multiprocessing, you must use the &#39;spawn&#39; start method&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">287</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">288</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">_C</span><span class="p">,</span> <span class="s2">&quot;_cuda_getDeviceCount&quot;</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">289</span>     <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;Torch not compiled with CUDA enabled&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">290</span> <span class="k">if</span> <span class="n">_cudart</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">291</span>     <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">292</span>         <span class="s2">&quot;libcudart functions unavailable. It looks like you have a broken build?&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">293</span>     <span class="p">)</span>
-
-<span class="ne">AssertionError</span>: Torch not compiled with CUDA enabled
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "423bd2f73890439aac97412e57be2878", "version_major": 2, "version_minor": 0}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model score : 0.899
 </pre></div>
 </div>
 </div>

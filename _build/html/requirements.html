@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>MOGDx Main Functions and Classes &#8212; MOGDx</title>
+    <title>Requirements &#8212; MOGDx</title>
   
   
   
@@ -57,11 +57,10 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Training_MOGDx';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'requirements';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Graph Neural Network with Multi Modal Encoder" href="MAIN/GNN_MME.html" />
-    <link rel="prev" title="Jupyter Notebook" href="Execution/Jupyter_Notebook.html" />
+    <link rel="prev" title="Contact Details" href="contact.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -197,14 +196,14 @@
 <li class="toctree-l2"><a class="reference internal" href="Execution/Jupyter_Notebook.html">Jupyter Notebook</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">MOGDx Main Functions and Classes</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Training_MOGDx.html">MOGDx Main Functions and Classes</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="MAIN/GNN_MME.html">Graph Neural Network with Multi Modal Encoder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MAIN/Training.html">Training MOGDx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MAIN/Utils.html">Utility Functions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="contact.html">Contact Details</a></li>
-<li class="toctree-l1"><a class="reference internal" href="requirements.html">Requirements</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Requirements</a></li>
 </ul>
 
     </div>
@@ -276,7 +275,7 @@
       
       
       
-      <li><a href="https://github.com/Barry8197/MOGDx/issues/new?title=Issue%20on%20page%20%2FTraining_MOGDx.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Barry8197/MOGDx/issues/new?title=Issue%20on%20page%20%2Frequirements.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -306,7 +305,7 @@
       
       
       
-      <li><a href="_sources/Training_MOGDx.md" target="_blank"
+      <li><a href="_sources/requirements.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -390,7 +389,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>MOGDx Main Functions and Classes</h1>
+    <h1>Requirements</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -400,15 +399,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-neural-network-with-multi-modal-encoder-gnnmme">Graph Neural Network with Multi Modal Encoder (GNNMME)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-modal-encoder">Multi Modal Encoder</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-convolutional-network">Graph Convolutional Network</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphsage">GraphSage</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training">Training</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utility">Utility</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">Citations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-of-python-requirements">List of Python Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-of-r-requirements">List of R Requirements</a></li>
 </ul>
             </nav>
         </div>
@@ -420,59 +412,149 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="mogdx-main-functions-and-classes">
-<h1>MOGDx Main Functions and Classes<a class="headerlink" href="#mogdx-main-functions-and-classes" title="Link to this heading">#</a></h1>
-<p>We provide a description of the main functions and classes used to train a MOGDx model.</p>
-<section id="graph-neural-network-with-multi-modal-encoder-gnnmme">
-<h2>Graph Neural Network with Multi Modal Encoder (GNNMME)<a class="headerlink" href="#graph-neural-network-with-multi-modal-encoder-gnnmme" title="Link to this heading">#</a></h2>
-<a class="reference internal image-reference" href="_images/gcn-mme.png"><img alt="fishy" class="align-left" src="_images/gcn-mme.png" style="width: 1200px;" /></a>
-<section id="multi-modal-encoder">
-<h3>Multi Modal Encoder<a class="headerlink" href="#multi-modal-encoder" title="Link to this heading">#</a></h3>
-</section>
-<section id="graph-convolutional-network">
-<h3>Graph Convolutional Network<a class="headerlink" href="#graph-convolutional-network" title="Link to this heading">#</a></h3>
-<a class="reference internal image-reference" href="_images/gcn.png"><img alt="fishy" class="align-left" src="_images/gcn.png" style="width: 1200px;" /></a>
-</section>
-<section id="graphsage">
-<h3>GraphSage<a class="headerlink" href="#graphsage" title="Link to this heading">#</a></h3>
-<a class="reference internal image-reference" href="_images/gsage.png"><img alt="fishy" class="align-left" src="_images/gsage.png" style="width: 1200px;" /></a>
-</section>
-</section>
-<section id="training">
-<h2>Training<a class="headerlink" href="#training" title="Link to this heading">#</a></h2>
-<p>Functions used to train and evaluate the MOGDx model. The training implemented follows that outlined by <span id="id1">[<a class="reference internal" href="intro.html#id2" title="William L. Hamilton. Graph Representation Learning. Synthesis Lectures on Artificial Intelligence and Machine Learning. Springer International Publishing, Cham, 2020. ISBN 978-3-031-00460-5 978-3-031-01588-5. URL: https://link.springer.com/10.1007/978-3-031-01588-5 (visited on 2024-03-13), doi:10.1007/978-3-031-01588-5.">Hamilton, 2020</a>]</span>.</p>
-<p>The list of functions are :</p>
-<ul class="simple">
-<li><p>train</p></li>
-<li><p>evaluate</p></li>
-<li><p>confusion_matrix</p></li>
-<li><p>AUROC</p></li>
-</ul>
-</section>
-<section id="utility">
-<h2>Utility<a class="headerlink" href="#utility" title="Link to this heading">#</a></h2>
-<p>Utility functions used to parse input data, load networks from csv or perform utility tasks.</p>
-<p>The list of functions are :</p>
-<ul class="simple">
-<li><p>data_parsing</p></li>
-<li><p>get_gpu_memory</p></li>
-<li><p>indices_removal_adjust</p></li>
-<li><p>network_from_csv</p></li>
-</ul>
-</section>
-<section id="citations">
-<h2>Citations<a class="headerlink" href="#citations" title="Link to this heading">#</a></h2>
-<div class="docutils container" id="id2">
-<div role="list" class="citation-list">
-<div class="citation" id="id3" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">Ham20</a><span class="fn-bracket">]</span></span>
-<p>William L. Hamilton. <em>Graph Representation Learning</em>. Synthesis Lectures on Artificial Intelligence and Machine Learning. Springer International Publishing, Cham, 2020. ISBN 978-3-031-00460-5 978-3-031-01588-5. URL: <a class="reference external" href="https://link.springer.com/10.1007/978-3-031-01588-5">https://link.springer.com/10.1007/978-3-031-01588-5</a> (visited on 2024-03-13), <a class="reference external" href="https://doi.org/10.1007/978-3-031-01588-5">doi:10.1007/978-3-031-01588-5</a>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="requirements">
+<h1>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">#</a></h1>
+<p>All Python requirements are specified in requirements.txt on the <a class="reference external" href="https://github.com/Barry8197/MOGDx">GitHub</a></p>
+<p>To create virtual env to execute the Python Code from the requirements.txt :  <br />
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">&lt;env&gt;</span> <span class="pre">--file</span> <span class="pre">requirements.txt</span></code></p>
+<p>R packages will have to be installed individually using install.packages()</p>
+<section id="list-of-python-requirements">
+<h2>List of Python Requirements<a class="headerlink" href="#list-of-python-requirements" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Package</span>                 <span class="n">Version</span>
+<span class="o">-----------------------</span> <span class="o">------------</span>
+<span class="n">absl</span><span class="o">-</span><span class="n">py</span>                 <span class="mf">0.15.0</span>
+<span class="n">asttokens</span>               <span class="mf">2.4.1</span>
+<span class="n">astunparse</span>              <span class="mf">1.6.3</span>
+<span class="n">bleach</span>                  <span class="mf">6.1.0</span>
+<span class="n">Brotli</span>                  <span class="mf">1.0.9</span>
+<span class="n">cachetools</span>              <span class="mf">5.3.2</span>
+<span class="n">certifi</span>                 <span class="mf">2023.11.17</span>
+<span class="n">cffi</span>                    <span class="mf">1.16.0</span>
+<span class="n">chardet</span>                 <span class="mf">5.2.0</span>
+<span class="n">charset</span><span class="o">-</span><span class="n">normalizer</span>      <span class="mf">2.0.4</span>
+<span class="n">clang</span>                   <span class="mf">5.0</span>
+<span class="n">cmake</span>                   <span class="mf">3.25.0</span>
+<span class="n">colorcet</span>                <span class="mf">3.0.1</span>
+<span class="n">comm</span>                    <span class="mf">0.2.0</span>
+<span class="n">contourpy</span>               <span class="mf">1.2.0</span>
+<span class="n">cryptography</span>            <span class="mf">41.0.3</span>
+<span class="n">cycler</span>                  <span class="mf">0.12.1</span>
+<span class="n">debugpy</span>                 <span class="mf">1.8.0</span>
+<span class="n">decorator</span>               <span class="mf">5.1.1</span>
+<span class="n">dgl</span>                     <span class="mf">1.1.2</span><span class="o">+</span><span class="n">cu118</span>
+<span class="n">exceptiongroup</span>          <span class="mf">1.2.0</span>
+<span class="n">executing</span>               <span class="mf">2.0.1</span>
+<span class="n">fastremap</span>               <span class="mf">1.14.0</span>
+<span class="n">filelock</span>                <span class="mf">3.13.1</span>
+<span class="n">flatbuffers</span>             <span class="mf">1.12</span>
+<span class="n">fonttools</span>               <span class="mf">4.45.1</span>
+<span class="n">gast</span>                    <span class="mf">0.4.0</span>
+<span class="n">gmpy2</span>                   <span class="mf">2.1.2</span>
+<span class="n">google</span><span class="o">-</span><span class="n">auth</span>             <span class="mf">2.23.4</span>
+<span class="n">google</span><span class="o">-</span><span class="n">auth</span><span class="o">-</span><span class="n">oauthlib</span>    <span class="mf">1.1.0</span>
+<span class="n">google</span><span class="o">-</span><span class="n">pasta</span>            <span class="mf">0.2.0</span>
+<span class="n">grpcio</span>                  <span class="mf">1.59.3</span>
+<span class="n">h5py</span>                    <span class="mf">3.1.0</span>
+<span class="n">idna</span>                    <span class="mf">3.4</span>
+<span class="n">importlib</span><span class="o">-</span><span class="n">metadata</span>      <span class="mf">6.8.0</span>
+<span class="n">importlib</span><span class="o">-</span><span class="n">resources</span>     <span class="mf">6.1.1</span>
+<span class="n">ipykernel</span>               <span class="mf">6.26.0</span>
+<span class="n">ipython</span>                 <span class="mf">8.18.1</span>
+<span class="n">jedi</span>                    <span class="mf">0.19.1</span>
+<span class="n">Jinja2</span>                  <span class="mf">3.1.2</span>
+<span class="n">joblib</span>                  <span class="mf">1.3.2</span>
+<span class="n">jupyter_client</span>          <span class="mf">8.6.0</span>
+<span class="n">jupyter_core</span>            <span class="mf">5.5.0</span>
+<span class="n">kaggle</span>                  <span class="mf">1.5.16</span>
+<span class="n">keras</span>                   <span class="mf">2.15.0</span>
+<span class="n">Keras</span><span class="o">-</span><span class="n">Preprocessing</span>     <span class="mf">1.1.2</span>
+<span class="n">kiwisolver</span>              <span class="mf">1.4.5</span>
+<span class="n">lit</span>                     <span class="mf">15.0.7</span>
+<span class="n">Markdown</span>                <span class="mf">3.5.1</span>
+<span class="n">MarkupSafe</span>              <span class="mf">2.1.1</span>
+<span class="n">matplotlib</span>              <span class="mf">3.8.2</span>
+<span class="n">matplotlib</span><span class="o">-</span><span class="n">inline</span>       <span class="mf">0.1.6</span>
+<span class="n">mkl</span><span class="o">-</span><span class="n">fft</span>                 <span class="mf">1.3.8</span>
+<span class="n">mkl</span><span class="o">-</span><span class="n">random</span>              <span class="mf">1.2.4</span>
+<span class="n">mkl</span><span class="o">-</span><span class="n">service</span>             <span class="mf">2.4.0</span>
+<span class="n">mpmath</span>                  <span class="mf">1.3.0</span>
+<span class="n">nest</span><span class="o">-</span><span class="n">asyncio</span>            <span class="mf">1.5.8</span>
+<span class="n">networkx</span>                <span class="mf">3.1</span>
+<span class="n">numpy</span>                   <span class="mf">1.26.2</span>
+<span class="n">oauthlib</span>                <span class="mf">3.2.2</span>
+<span class="n">opt</span><span class="o">-</span><span class="n">einsum</span>              <span class="mf">3.3.0</span>
+<span class="n">packaging</span>               <span class="mf">23.2</span>
+<span class="n">palettable</span>              <span class="mf">3.3.3</span>
+<span class="n">pandas</span>                  <span class="mf">1.4.2</span>
+<span class="n">param</span>                   <span class="mf">2.0.1</span>
+<span class="n">parso</span>                   <span class="mf">0.8.3</span>
+<span class="n">pexpect</span>                 <span class="mf">4.9.0</span>
+<span class="n">Pillow</span>                  <span class="mf">10.0.1</span>
+<span class="n">pip</span>                     <span class="mf">23.3.1</span>
+<span class="n">platformdirs</span>            <span class="mf">4.0.0</span>
+<span class="n">prompt</span><span class="o">-</span><span class="n">toolkit</span>          <span class="mf">3.0.41</span>
+<span class="n">protobuf</span>                <span class="mf">4.23.4</span>
+<span class="n">psutil</span>                  <span class="mf">5.9.0</span>
+<span class="n">ptyprocess</span>              <span class="mf">0.7.0</span>
+<span class="n">pure</span><span class="o">-</span><span class="nb">eval</span>               <span class="mf">0.2.2</span>
+<span class="n">pyasn1</span>                  <span class="mf">0.5.1</span>
+<span class="n">pyasn1</span><span class="o">-</span><span class="n">modules</span>          <span class="mf">0.3.0</span>
+<span class="n">pycparser</span>               <span class="mf">2.21</span>
+<span class="n">pyct</span>                    <span class="mf">0.5.0</span>
+<span class="n">Pygments</span>                <span class="mf">2.17.2</span>
+<span class="n">pyOpenSSL</span>               <span class="mf">23.2.0</span>
+<span class="n">pyparsing</span>               <span class="mf">3.1.1</span>
+<span class="n">PySocks</span>                 <span class="mf">1.7.1</span>
+<span class="n">python</span><span class="o">-</span><span class="n">dateutil</span>         <span class="mf">2.8.2</span>
+<span class="n">python</span><span class="o">-</span><span class="n">slugify</span>          <span class="mf">8.0.1</span>
+<span class="n">pytz</span>                    <span class="mf">2023.3</span><span class="o">.</span><span class="n">post1</span>
+<span class="n">pyzmq</span>                   <span class="mf">25.1.1</span>
+<span class="n">requests</span>                <span class="mf">2.31.0</span>
+<span class="n">requests</span><span class="o">-</span><span class="n">oauthlib</span>       <span class="mf">1.3.1</span>
+<span class="n">rsa</span>                     <span class="mf">4.9</span>
+<span class="n">scikit</span><span class="o">-</span><span class="n">learn</span>            <span class="mf">1.3.2</span>
+<span class="n">scipy</span>                   <span class="mf">1.11.4</span>
+<span class="n">seaborn</span>                 <span class="mf">0.13.0</span>
+<span class="n">setuptools</span>              <span class="mf">68.0.0</span>
+<span class="n">six</span>                     <span class="mf">1.15.0</span>
+<span class="n">slideio</span>                 <span class="mf">2.2.0</span>
+<span class="n">stack</span><span class="o">-</span><span class="n">data</span>              <span class="mf">0.6.3</span>
+<span class="n">sympy</span>                   <span class="mf">1.12</span>
+<span class="n">tensorboard</span>             <span class="mf">2.15.1</span>
+<span class="n">tensorboard</span><span class="o">-</span><span class="n">data</span><span class="o">-</span><span class="n">server</span> <span class="mf">0.7.2</span>
+<span class="n">tensorflow</span><span class="o">-</span><span class="n">estimator</span>    <span class="mf">2.15.0</span>
+<span class="n">termcolor</span>               <span class="mf">1.1.0</span>
+<span class="n">text</span><span class="o">-</span><span class="n">unidecode</span>          <span class="mf">1.3</span>
+<span class="n">threadpoolctl</span>           <span class="mf">3.2.0</span>
+<span class="n">torch</span>                   <span class="mf">2.0.1</span>
+<span class="n">torchaudio</span>              <span class="mf">2.0.2</span>
+<span class="n">torchvision</span>             <span class="mf">0.15.2</span>
+<span class="n">tornado</span>                 <span class="mf">6.3.3</span>
+<span class="n">tqdm</span>                    <span class="mf">4.65.0</span>
+<span class="n">traitlets</span>               <span class="mf">5.13.0</span>
+<span class="n">triton</span>                  <span class="mf">2.0.0</span>
+<span class="n">typing</span>                  <span class="mf">3.7.4.3</span>
+<span class="n">typing</span><span class="o">-</span><span class="n">extensions</span>       <span class="mf">3.7.4.3</span>
+<span class="n">urllib3</span>                 <span class="mf">1.26.18</span>
+<span class="n">wcwidth</span>                 <span class="mf">0.2.12</span>
+<span class="n">webencodings</span>            <span class="mf">0.5.1</span>
+<span class="n">Werkzeug</span>                <span class="mf">3.0.1</span>
+<span class="n">wheel</span>                   <span class="mf">0.41.2</span>
+<span class="n">wrapt</span>                   <span class="mf">1.12.1</span>
+<span class="n">zipp</span>                    <span class="mf">3.17.0</span>
+</pre></div>
 </div>
-</div>
+</section>
+<section id="list-of-r-requirements">
+<h2>List of R Requirements<a class="headerlink" href="#list-of-r-requirements" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Package</span>                 <span class="n">Version</span>
+<span class="o">-----------------------</span> <span class="o">------------</span>
+<span class="n">wateRmelon</span>
+<span class="n">DESEq2</span>
+<span class="n">methylPipeR</span>
+</pre></div>
 </div>
 </section>
-<div class="toctree-wrapper compound">
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -506,22 +588,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Execution/Jupyter_Notebook.html"
+       href="contact.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Jupyter Notebook</p>
+        <p class="prev-next-title">Contact Details</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="MAIN/GNN_MME.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Graph Neural Network with Multi Modal Encoder</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -539,15 +612,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-neural-network-with-multi-modal-encoder-gnnmme">Graph Neural Network with Multi Modal Encoder (GNNMME)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-modal-encoder">Multi Modal Encoder</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-convolutional-network">Graph Convolutional Network</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphsage">GraphSage</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training">Training</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utility">Utility</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">Citations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-of-python-requirements">List of Python Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-of-r-requirements">List of R Requirements</a></li>
 </ul>
   </nav></div>
 

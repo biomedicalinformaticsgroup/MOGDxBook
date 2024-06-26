@@ -30,10 +30,6 @@ LGG : \
 project = 'LGG' \
 trait = 'paper_Grade' 
 
-Note : To create the KIPAN dataset, the KIRC, KICP and KICH datasets have to be combined. This can be achieved by copying the downloaded files 
-from all three seperate datasets into a single dataset called KIPAN keeping the same naming structures. A column named 'subtype' specifying which dataset
-the patient came from needs to be created in the Meta data file. A basic knowledge of R is required for this. 
-
 KIPAN :  \
 project = 'KIPAN' \
 trait = 'subtype' 

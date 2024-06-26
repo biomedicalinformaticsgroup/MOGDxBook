@@ -5,31 +5,22 @@ Multi-omic Graph Diagnosis (MOGDx) is a tool for the integration of omic data an
 
 GCN is a novel paradigm for learning from both network structure and node features. Heterogeneity in diseases confounds clinical trials, treatments, genetic association and more. Accurate stratification of these diseases is therefore critical to optimize treatment strategies for patients with heterogeneous diseases. Previous research has shown that accurate classification of heterogenous diseases has been achieved by integrating and classifying multi-omic data [^fn3][^fn4][^fn5]. MOGDx improves upon this research. The advantages of MOGDx is that it can handle both a variable number of modalities and missing patient data in one or more modalities. Performance of MOGDx was benchmarked on the BRCA TCGA dataset with competitive performance compared to its counterparts. In summary, MOGDx combines patient similarity network integration with graph neural network learning for accurate disease classification. 
 
-## Workflow in R 
-
-## Workflow in Python
-### Full pipeline overview
-
-
-### Pre-preocessing and Graph Generation
-
-
-### Graph Convolutionl Network with Multi Modal Encoder
-
+## Installation
+A working version of R and Python is required. R version 4.2.2 and Python version 3.9.2 was used to obtain all results.
 
 ## Data Download
 Create a folder called `data` and a folder for each dataset with naming convention 'TCGA-' e.g. 'TCGA-BRCA' inside this folder.
 
 Use the R script `data_download.R` to download all data changing the project to BRCA/LGG/KICH/KIRC/KICH
 
-## Installation
-A working version of R and Python is required. R version 4.2.2 and Python version 3.9.2 was used to obtain all results.
+Note : To create the KIPAN dataset, the KIRC, KICP and KICH datasets have to be combined. This can be achieved by copying the downloaded files 
+from all three seperate datasets into a single dataset called KIPAN keeping the same naming structures. A column named 'subtype' specifying which dataset
+the patient came from needs to be created in the Meta data file. A basic knowledge of R is required for this. 
 
-## Requirements
-All requirements are specified in requirements.txt 
+## Accessing the data in Python
+The downloaded data in its raw format will be in `.rda` format. It will be required to convert from this format to `.pkl` for processing in python. 
 
-To create virtual env execute :  \
- `conda create --name <env> --file requirements.txt` 
+It is recommended to use the [pyreadr](https://pypi.org/project/pyreadr/) python package to do so and saving the preprocessed file with naming convention `{modality}_preprocessed.pkl`
 
 ## Citations
 ```{bibliography}
