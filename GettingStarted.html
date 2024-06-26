@@ -204,6 +204,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="contact.html">Contact Details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="requirements.html">Requirements</a></li>
 </ul>
 
     </div>
@@ -400,16 +401,9 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-in-r">Workflow in R</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-in-python">Workflow in Python</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#full-pipeline-overview">Full pipeline overview</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-preocessing-and-graph-generation">Pre-preocessing and Graph Generation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-convolutionl-network-with-multi-modal-encoder">Graph Convolutionl Network with Multi Modal Encoder</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-download">Data Download</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-download">Data Download</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-data-in-python">Accessing the data in Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">Citations</a></li>
 </ul>
             </nav>
@@ -429,35 +423,22 @@ document.write(`
 <p>Multi-omic Graph Diagnosis (MOGDx) is a tool for the integration of omic data and classification of heterogeneous diseases. MOGDx exploits a Patient Similarity Network (PSN) framework to integrate omic data using Similarity Network Fusion (SNF) [^fn1]. A single PSN is built per modality. The PSN is built using the most informative features of that modality. The most informative features are found by performing a contrastive analysis between classification targets. For example, in mRNA, differentially expressed genes will be used to construct the PSN. Where suitable, Pearson correlation, otherwise Euclidean distance is measured between these informative features and the network is constructed using the K Nearest Neighbours (KNN) algorithm. SNF is used to combine individual PSN’s into a single network. The fused PSN and the omic datasets are input into the Graph Convultional Network with Multi Modal Encoder, the architecture of which is shown in below. Each omic measure is compressed using a two layer encoder. The compressed encoded layer of each modality is then decoded to a shared latent space using mean pooling. This encourages each modality to learn the same latent space. The shared latent space is the node feature matrix, required for training the GCN, with each row forming a node feature vector. Classification is performed on the fused network using the Graph Convolutional Network (GCN) deep learning algorithm [^fn2].</p>
 <p>GCN is a novel paradigm for learning from both network structure and node features. Heterogeneity in diseases confounds clinical trials, treatments, genetic association and more. Accurate stratification of these diseases is therefore critical to optimize treatment strategies for patients with heterogeneous diseases. Previous research has shown that accurate classification of heterogenous diseases has been achieved by integrating and classifying multi-omic data [^fn3][^fn4][^fn5]. MOGDx improves upon this research. The advantages of MOGDx is that it can handle both a variable number of modalities and missing patient data in one or more modalities. Performance of MOGDx was benchmarked on the BRCA TCGA dataset with competitive performance compared to its counterparts. In summary, MOGDx combines patient similarity network integration with graph neural network learning for accurate disease classification.</p>
 </section>
-<section id="workflow-in-r">
-<h2>Workflow in R<a class="headerlink" href="#workflow-in-r" title="Link to this heading">#</a></h2>
-</section>
-<section id="workflow-in-python">
-<h2>Workflow in Python<a class="headerlink" href="#workflow-in-python" title="Link to this heading">#</a></h2>
-<section id="full-pipeline-overview">
-<h3>Full pipeline overview<a class="headerlink" href="#full-pipeline-overview" title="Link to this heading">#</a></h3>
-</section>
-<section id="pre-preocessing-and-graph-generation">
-<h3>Pre-preocessing and Graph Generation<a class="headerlink" href="#pre-preocessing-and-graph-generation" title="Link to this heading">#</a></h3>
-</section>
-<section id="graph-convolutionl-network-with-multi-modal-encoder">
-<h3>Graph Convolutionl Network with Multi Modal Encoder<a class="headerlink" href="#graph-convolutionl-network-with-multi-modal-encoder" title="Link to this heading">#</a></h3>
-</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
+<p>A working version of R and Python is required. R version 4.2.2 and Python version 3.9.2 was used to obtain all results.</p>
 </section>
 <section id="data-download">
 <h2>Data Download<a class="headerlink" href="#data-download" title="Link to this heading">#</a></h2>
 <p>Create a folder called <code class="docutils literal notranslate"><span class="pre">data</span></code> and a folder for each dataset with naming convention ‘TCGA-’ e.g. ‘TCGA-BRCA’ inside this folder.</p>
 <p>Use the R script <code class="docutils literal notranslate"><span class="pre">data_download.R</span></code> to download all data changing the project to BRCA/LGG/KICH/KIRC/KICH</p>
+<p>Note : To create the KIPAN dataset, the KIRC, KICP and KICH datasets have to be combined. This can be achieved by copying the downloaded files
+from all three seperate datasets into a single dataset called KIPAN keeping the same naming structures. A column named ‘subtype’ specifying which dataset
+the patient came from needs to be created in the Meta data file. A basic knowledge of R is required for this.</p>
 </section>
-<section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
-<p>A working version of R and Python is required. R version 4.2.2 and Python version 3.9.2 was used to obtain all results.</p>
-</section>
-<section id="requirements">
-<h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">#</a></h2>
-<p>All requirements are specified in requirements.txt</p>
-<p>To create virtual env execute :  <br />
-<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">&lt;env&gt;</span> <span class="pre">--file</span> <span class="pre">requirements.txt</span></code></p>
+<section id="accessing-the-data-in-python">
+<h2>Accessing the data in Python<a class="headerlink" href="#accessing-the-data-in-python" title="Link to this heading">#</a></h2>
+<p>The downloaded data in its raw format will be in <code class="docutils literal notranslate"><span class="pre">.rda</span></code> format. It will be required to convert from this format to <code class="docutils literal notranslate"><span class="pre">.pkl</span></code> for processing in python.</p>
+<p>It is recommended to use the <a class="reference external" href="https://pypi.org/project/pyreadr/">pyreadr</a> python package to do so and saving the preprocessed file with naming convention <code class="docutils literal notranslate"><span class="pre">{modality}_preprocessed.pkl</span></code></p>
 </section>
 <section id="citations">
 <h2>Citations<a class="headerlink" href="#citations" title="Link to this heading">#</a></h2>
@@ -537,16 +518,9 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-in-r">Workflow in R</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-in-python">Workflow in Python</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#full-pipeline-overview">Full pipeline overview</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-preocessing-and-graph-generation">Pre-preocessing and Graph Generation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-convolutionl-network-with-multi-modal-encoder">Graph Convolutionl Network with Multi Modal Encoder</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-download">Data Download</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-download">Data Download</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-data-in-python">Accessing the data in Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">Citations</a></li>
 </ul>
   </nav></div>
