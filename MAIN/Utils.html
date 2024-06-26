@@ -400,7 +400,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.data_parsing"><code class="docutils literal notranslate"><span class="pre">data_parsing()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.data_parsing_R"><code class="docutils literal notranslate"><span class="pre">data_parsing_R()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.data_parsing_python"><code class="docutils literal notranslate"><span class="pre">data_parsing_python()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.get_gpu_memory"><code class="docutils literal notranslate"><span class="pre">get_gpu_memory()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.indices_removal_adjust"><code class="docutils literal notranslate"><span class="pre">indices_removal_adjust()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.network_from_csv"><code class="docutils literal notranslate"><span class="pre">network_from_csv()</span></code></a></li>
@@ -418,8 +419,30 @@ document.write(`
   <section id="module-utils">
 <span id="utility-functions"></span><h1>Utility Functions<a class="headerlink" href="#module-utils" title="Link to this heading">#</a></h1>
 <dl class="py function">
-<dt class="sig sig-object py" id="utils.data_parsing">
-<span class="sig-prename descclassname"><span class="pre">utils.</span></span><span class="sig-name descname"><span class="pre">data_parsing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">DATA_PATH</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">MODALITIES</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TARGET</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">INDEX_COL</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/utils.html#data_parsing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.data_parsing" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="utils.data_parsing_R">
+<span class="sig-prename descclassname"><span class="pre">utils.</span></span><span class="sig-name descname"><span class="pre">data_parsing_R</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">DATA_PATH</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">MODALITIES</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TARGET</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">INDEX_COL</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/utils.html#data_parsing_R"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.data_parsing_R" title="Link to this definition">#</a></dt>
+<dd><p>Parse data from multiple modalities and return the parsed data along with metadata.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>DATA_PATH</strong> (<em>str</em>) – The path to the data.</p></li>
+<li><p><strong>MODALITIES</strong> (<em>list</em>) – A list of modalities to be processed.</p></li>
+<li><p><strong>TARGET</strong> (<em>str</em>) – The target variable.</p></li>
+<li><p><strong>INDEX_COL</strong> (<em>str</em>) – The column to be used as the index.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing the parsed data for each modality and the metadata.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="utils.data_parsing_python">
+<span class="sig-prename descclassname"><span class="pre">utils.</span></span><span class="sig-name descname"><span class="pre">data_parsing_python</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">DATA_PATH</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">MODALITIES</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TARGET</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">INDEX_COL</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/utils.html#data_parsing_python"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.data_parsing_python" title="Link to this definition">#</a></dt>
 <dd><p>Parse data from multiple modalities and return the parsed data along with metadata.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -558,7 +581,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.data_parsing"><code class="docutils literal notranslate"><span class="pre">data_parsing()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.data_parsing_R"><code class="docutils literal notranslate"><span class="pre">data_parsing_R()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.data_parsing_python"><code class="docutils literal notranslate"><span class="pre">data_parsing_python()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.get_gpu_memory"><code class="docutils literal notranslate"><span class="pre">get_gpu_memory()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.indices_removal_adjust"><code class="docutils literal notranslate"><span class="pre">indices_removal_adjust()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utils.network_from_csv"><code class="docutils literal notranslate"><span class="pre">network_from_csv()</span></code></a></li>

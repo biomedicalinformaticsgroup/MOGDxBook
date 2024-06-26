@@ -15,7 +15,11 @@ kernelspec:
 # MOGDx Main Functions and Classes
 We provide a description of the main functions and classes used to train a MOGDx model. 
 
-## Graph Neural Network with Multi Modal Encoder (GNNMME)
+## Graph Neural Network with Multi Modal Encoder (GNN-MME)
+The GNN-MME is the main component in the architecture of MOGDx. It consists of a Multi-Modal Encoder (MME) to reduce the dimension of the input modalities and decodes all modalities to a shared latent space. 
+
+Along with the MME there is a Graph Neural Network (GNN). Currently there are two GNN's implemented ; Graph Convolutional Network (GCN) for applications in the transductive setting and GraphSage for applications in the inductive setting. Both algorithms are implemented using the Deep Graph Library ([DGL](https://www.dgl.ai/)). 
+
 ```{image} ./images/gcn-mme.png
 :alt: fishy
 :width: 1200px
@@ -24,7 +28,9 @@ We provide a description of the main functions and classes used to train a MOGDx
 
 ### Multi Modal Encoder
 
-### Graph Convolutional Network 
+### Graph Convolutional Network (GCN)
+GCN, developed by {cite:p}`kipf_semi-supervised_2017`, was implemented from the DGL. For a tutorial on the use of GCN's we refer you to the [DGL Tutorial Page](https://docs.dgl.ai/en/1.1.x/tutorials/blitz/1_introduction.html#sphx-glr-tutorials-blitz-1-introduction-py)
+
 ```{image} ./images/gcn.png
 :alt: fishy
 :width: 1200px
@@ -32,6 +38,8 @@ We provide a description of the main functions and classes used to train a MOGDx
 ```
 
 ### GraphSage
+GraphSage, developed by {cite:p}`hamilton_inductive_2017`, was implemented from the DGL. For a tutorial on the use of GraphSage we refer you to the [DGL Tutorial Page](https://docs.dgl.ai/en/0.8.x/tutorials/blitz/4_link_predict.html)
+
 ```{image} ./images/gsage.png
 :alt: fishy
 :width: 1200px
@@ -51,11 +59,13 @@ The list of functions are :
 Utility functions used to parse input data, load networks from csv or perform utility tasks. 
 
 The list of functions are : 
-- data_parsing
+- data_parsing_python
+- data_parsing_R
 - get_gpu_memory
 - indices_removal_adjust
 - network_from_csv
 
 ## Citations
 ```{bibliography}
+:filter: docname in docnames
 ```
