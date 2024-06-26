@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Multi-Omic Graph Diagnosis (MOGDx) : A data integration tool to perform classification tasks for heterogenous diseases &#8212; MOGDx</title>
+    <title>Multi-Omic Graph Diagnosis (MOGDx) &#8212; MOGDx</title>
   
   
   
@@ -173,7 +173,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    Multi-Omic Graph Diagnosis (MOGDx) : A data integration tool to perform classification tasks for heterogenous diseases
+                    Multi-Omic Graph Diagnosis (MOGDx)
                 </a>
             </li>
         </ul>
@@ -181,14 +181,8 @@
 <li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="Processing_in_R.html">Processing in R</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="R/Preprocessing.html">MOGDx Modality Processing</a></li>
-
-
-
-
-
-
 <li class="toctree-l2"><a class="reference internal" href="R/Graph_Generation.html">Modality Graph Generation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="R/SNF.html">Similarity Network Fusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="R/SNF.html">Similarity Network Fusion (SNF)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="R/preprocess_functions.html">Preprocess Functions</a></li>
 </ul>
 </li>
@@ -198,16 +192,16 @@
 <li class="toctree-l2"><a class="reference internal" href="Python/Preprocess_Functions.html">Preprocess Functions</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Training_MOGDx.html">Training MOGDx</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Executing_MOGDx.html">Executing MOGDx</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Execution/Command_Line.html">Running on Command Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Execution/mogdx.html">MOGDx Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Execution/Jupyter_Notebook.html">Jupyter Notebook</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Training_MOGDx.html">MOGDx Main Functions and Classes</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="MAIN/GNN_MME.html">Graph Neural Network with Multi Modal Encoder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MAIN/Training.html">Training MOGDx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MAIN/Utils.html">Utility Functions</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Executing_MOGDx.html">Executing MOGDx</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="Execution/Command_Line.html">Running on Command Line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Execution/mogdx.html">MOGDx Execution Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Execution/Jupyter_Notebook.html">MOGDx</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="contact.html">Contact Details</a></li>
@@ -396,7 +390,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Multi-Omic Graph Diagnosis (MOGDx) : A data integration tool to perform classification tasks for heterogenous diseases</h1>
+    <h1>Multi-Omic Graph Diagnosis (MOGDx)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -406,6 +400,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-data-integration-tool-to-perform-classification-tasks-for-heterogenous-diseases">A data integration tool to perform classification tasks for heterogenous diseases</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of Contents</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract">Abstract</a></li>
 </ul>
@@ -419,14 +414,17 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="multi-omic-graph-diagnosis-mogdx-a-data-integration-tool-to-perform-classification-tasks-for-heterogenous-diseases">
-<h1>Multi-Omic Graph Diagnosis (MOGDx) : A data integration tool to perform classification tasks for heterogenous diseases<a class="headerlink" href="#multi-omic-graph-diagnosis-mogdx-a-data-integration-tool-to-perform-classification-tasks-for-heterogenous-diseases" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="multi-omic-graph-diagnosis-mogdx">
+<h1>Multi-Omic Graph Diagnosis (MOGDx)<a class="headerlink" href="#multi-omic-graph-diagnosis-mogdx" title="Link to this heading">#</a></h1>
+<section id="a-data-integration-tool-to-perform-classification-tasks-for-heterogenous-diseases">
+<h2>A data integration tool to perform classification tasks for heterogenous diseases<a class="headerlink" href="#a-data-integration-tool-to-perform-classification-tasks-for-heterogenous-diseases" title="Link to this heading">#</a></h2>
 <p><em>Barry Ryan , Riccardo Marioni and T. Ian Simpson</em>
  </p>
 <p><a class="reference external" href="https://zenodo.org/doi/10.5281/zenodo.10545043"><img alt="DOI" src="https://zenodo.org/badge/622972427.svg" /></a></p>
 <p> </p>
 <a class="reference internal image-reference" href="_images/pipeline.jpg"><img alt="fishy" class="align-left" src="_images/pipeline.jpg" style="width: 1200px;" /></a>
 <p> </p>
+</section>
 <section id="table-of-contents">
 <h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Link to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
@@ -434,8 +432,8 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Processing_in_R.html">Processing in R</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Processing_in_Python.html">Processing in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Training_MOGDx.html">Training MOGDx</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Executing_MOGDx.html">Executing MOGDx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Training_MOGDx.html">MOGDx Main Functions and Classes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contact.html">Contact Details</a></li>
 </ul>
 </div>
@@ -449,7 +447,15 @@ document.write(`
 <p>The performance of MOGDx was benchmarked on three distinct datasets from The Cancer Genome Atlas (<a class="reference external" href="https://www.cancer.gov/ccg/research/genome-sequencing/tcga">TCGA</a>) for breast invasive carcinoma, kidney cancer, and low grade glioma. MOGDx demonstrated state-of-the-art performance and an ability to identify relevant multi-omic markers in each task. It did so while integrating more genomic measures with greater patient coverage compared to other network integrative methods. MOGDx is available to download from <a class="reference external" href="https://github.com/biomedicalinformaticsgroup/MOGDx">Github</a>.</p>
 </div>
 <p>For more information find the preprint to our paper online <a class="reference external" href="https://www.medrxiv.org/content/10.1101/2023.07.09.23292410v2">here</a></p>
-<span class="target" id="id1"></span></section>
+<div class="docutils container" id="id1">
+<div role="list" class="citation-list">
+<div class="citation" id="id2" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Ham20<span class="fn-bracket">]</span></span>
+<p>William L. Hamilton. <em>Graph Representation Learning</em>. Synthesis Lectures on Artificial Intelligence and Machine Learning. Springer International Publishing, Cham, 2020. ISBN 978-3-031-00460-5 978-3-031-01588-5. URL: <a class="reference external" href="https://link.springer.com/10.1007/978-3-031-01588-5">https://link.springer.com/10.1007/978-3-031-01588-5</a> (visited on 2024-03-13), <a class="reference external" href="https://doi.org/10.1007/978-3-031-01588-5">doi:10.1007/978-3-031-01588-5</a>.</p>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -507,6 +513,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-data-integration-tool-to-perform-classification-tasks-for-heterogenous-diseases">A data integration tool to perform classification tasks for heterogenous diseases</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of Contents</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract">Abstract</a></li>
 </ul>

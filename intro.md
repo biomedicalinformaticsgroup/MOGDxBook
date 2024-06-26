@@ -1,4 +1,5 @@
-# Multi-Omic Graph Diagnosis (MOGDx) : A data integration tool to perform classification tasks for heterogenous diseases
+# Multi-Omic Graph Diagnosis (MOGDx) 
+## A data integration tool to perform classification tasks for heterogenous diseases
 
 *Barry Ryan , Riccardo Marioni and T. Ian Simpson*
 &nbsp;

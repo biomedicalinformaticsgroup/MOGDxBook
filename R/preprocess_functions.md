@@ -5,7 +5,8 @@ pipeline.
 
 ## Import Libraries
 
-### Remove NAs from trait data
+### removeTraitNAs
+Remove NAs from trait data
 
     removeTraitNAs <- function(traitDF, otherDFs, trait) {
       rowsToKeep <- !is.na(traitDF[[trait]])
@@ -24,7 +25,8 @@ pipeline.
       list(traitDF = traitDF, otherDFs = otherDFs)
     }
 
-### Perform cross validated lasso regression on trait of interest
+### cvTrait
+Perform cross validated lasso regression on trait of interest
 
     cvTrait <- function(trainMethyl, trainPhenotypes, trait, nFolds) {
       print(paste0('Removing rows with missing ', trait, ' from training data.'))
@@ -46,7 +48,8 @@ pipeline.
       list(trait = trait, model = methylModel)
     }
 
-### Perfrorm differential expression analysis and return differentially expressed genes
+### diff_expr
+Perfrorm differential expression analysis and return differentially expressed genes
 
     diff_expr <- function(count_mtx , datMeta , trait , n_genes , modality) {
       
@@ -129,7 +132,8 @@ pipeline.
       list(dds = dds , datExpr = datExpr_vst, datMeta = datMeta_vst , top_genes = top_genes)
     }
 
-### Perform K Nearest Neighbour calculation and return igraph object
+### make.knn.graph
+Perform K Nearest Neighbour calculation and return igraph object
 
     make.knn.graph<-function(D,k){
       # calculate euclidean distances between cells
@@ -159,7 +163,8 @@ pipeline.
       return(list(graph=graph,layout=g.layout))        
     }
 
-### Perform KNN graph generation, plot graph and save as long data frame
+### expr.to.graph
+Perform KNN graph generation, plot graph and save as long data frame
 
     expr.to.graph<-function(datExpr , datMeta , trait , top_genes , modality){
       
@@ -197,7 +202,8 @@ pipeline.
       return(as_long_data_frame(g))
     }
 
-### Perform KNN on SNF adjacenecy matrix and return igraph object
+### snf.to.graph
+Perform KNN on SNF adjacenecy matrix and return igraph object
 
     snf.to.graph <- function(W , datMeta , trait , idx , sub_mod_list) {
       

@@ -45,4 +45,3 @@ sphinx:
     preprocess_functions : "./MAIN/"
     train : "./MAIN/"
     utils : "./MAIN/"
-    MOGDx : "."

@@ -171,7 +171,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Multi-Omic Graph Diagnosis (MOGDx) : A data integration tool to perform classification tasks for heterogenous diseases
+                    Multi-Omic Graph Diagnosis (MOGDx)
                 </a>
             </li>
         </ul>
@@ -179,14 +179,8 @@
 <li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="Processing_in_R.html">Processing in R</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="R/Preprocessing.html">MOGDx Modality Processing</a></li>
-
-
-
-
-
-
 <li class="toctree-l2"><a class="reference internal" href="R/Graph_Generation.html">Modality Graph Generation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="R/SNF.html">Similarity Network Fusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="R/SNF.html">Similarity Network Fusion (SNF)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="R/preprocess_functions.html">Preprocess Functions</a></li>
 </ul>
 </li>
@@ -196,16 +190,16 @@
 <li class="toctree-l2"><a class="reference internal" href="Python/Preprocess_Functions.html">Preprocess Functions</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Training_MOGDx.html">Training MOGDx</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Executing_MOGDx.html">Executing MOGDx</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Execution/Command_Line.html">Running on Command Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Execution/mogdx.html">MOGDx Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Execution/Jupyter_Notebook.html">Jupyter Notebook</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Training_MOGDx.html">MOGDx Main Functions and Classes</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="MAIN/GNN_MME.html">Graph Neural Network with Multi Modal Encoder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MAIN/Training.html">Training MOGDx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MAIN/Utils.html">Utility Functions</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Executing_MOGDx.html">Executing MOGDx</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="Execution/Command_Line.html">Running on Command Line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Execution/mogdx.html">MOGDx Execution Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Execution/Jupyter_Notebook.html">MOGDx</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="contact.html">Contact Details</a></li>
@@ -407,8 +401,6 @@ document.write(`
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="MAIN/Training.html#train.confusion_matrix">confusion_matrix() (in module train)</a>
 </li>
-      <li><a href="Execution/mogdx.html#MOGDx.construct_parser">construct_parser() (in module MOGDx)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="Python/Preprocess_Functions.html#preprocess_functions.create_similarity_matrix">create_similarity_matrix() (in module preprocess_functions)</a>
@@ -534,22 +526,11 @@ document.write(`
       <ul>
         <li><a href="MAIN/GNN_MME.html#module-GNN_MME">GNN_MME</a>
 </li>
-        <li><a href="Execution/mogdx.html#module-MOGDx">MOGDx</a>
-</li>
         <li><a href="Python/Preprocess_Functions.html#module-preprocess_functions">preprocess_functions</a>
 </li>
         <li><a href="MAIN/Training.html#module-train">train</a>
 </li>
         <li><a href="MAIN/Utils.html#module-utils">utils</a>
-</li>
-      </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li>
-    MOGDx
-
-      <ul>
-        <li><a href="Execution/mogdx.html#module-MOGDx">module</a>
 </li>
       </ul></li>
   </ul></td>

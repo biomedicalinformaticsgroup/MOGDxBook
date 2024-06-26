@@ -16,14 +16,14 @@ chapters:
   - file: Python/Preprocessing
   - file: Python/SNF
   - file: Python/Preprocess_Functions
-- file: Training_MOGDx
-  sections:
-  - file: MAIN/GNN_MME
-  - file: MAIN/Training
-  - file: MAIN/Utils
 - file: Executing_MOGDx
   sections:
   - file: Execution/Command_Line
   - file: Execution/mogdx
   - file: Execution/Jupyter_Notebook
+- file: Training_MOGDx
+  sections:
+  - file: MAIN/GNN_MME
+  - file: MAIN/Training
+  - file: MAIN/Utils
 - file: contact

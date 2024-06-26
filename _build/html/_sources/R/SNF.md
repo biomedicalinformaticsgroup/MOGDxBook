@@ -1,8 +1,9 @@
-# Similarity Network Fusion
+# Similarity Network Fusion (SNF)
 
-## Importing the necessary libraries
+## Introduction
+This file provides code for performing SNF on all available combinations of modalities. By altering the modalities list to include further modalities, SNF will be performed on all possible combinaitons of modalities with a final graph output in the correct naming convention for downstream inclusion in MOGDx pipeline. 
 
-## Specify the dataset, project, trait, index column, and modalities
+### Specify the dataset, project, trait, index column, and modalities
 
     dataset <- 'TCGA'
     project <- 'BRCA'
@@ -12,7 +13,7 @@
     # The list of modalities
     modalities <- c( 'mRNA' , 'miRNA' )
 
-## Generate list of combination of modalities
+### Generate list of combination of modalities
 
     # Initialize an empty list to store sublists
     mod_list <- list()
@@ -30,7 +31,7 @@
       }
     }
 
-## Import adjacency matrices and metadata for each combination of modalities and perform SNF
+### Import adjacency matrices and metadata for each combination of modalities and perform SNF
 
     for (sub_mod_list in mod_list) {
       colnames <- c('patient' ,  'race' , 'gender'  , trait)
