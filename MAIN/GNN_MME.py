@@ -67,9 +67,6 @@ class GCN_MME(nn.Module):
         num_layers (int): Number of layers in the encoder.
         drop (nn.Dropout): Dropout layer.
 
-    Methods:
-        forward(g, h, subjects_list, device): Performs the forward pass of the encoder.
-
     """
     
     def __init__(self, input_dims, latent_dims, decoder_dim, hidden_feats, num_classes):
@@ -172,9 +169,6 @@ class GSage_MME(nn.Module):
         batch_norms (nn.ModuleList): List of batch normalization layers.
         num_layers (int): Number of layers in the encoder.
         drop (nn.Dropout): Dropout layer.
-
-    Methods:
-        forward(g, h, subjects_list, device): Performs the forward pass of the encoder.
 
     """
 
