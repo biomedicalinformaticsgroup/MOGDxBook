@@ -411,7 +411,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#GNN_MME.GCN_MME.num_layers"><code class="docutils literal notranslate"><span class="pre">GCN_MME.num_layers</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#GNN_MME.GCN_MME.drop"><code class="docutils literal notranslate"><span class="pre">GCN_MME.drop</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#GNN_MME.GCN_MME.forward"><code class="docutils literal notranslate"><span class="pre">GCN_MME.forward()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">GCN_MME.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#GNN_MME.GSage_MME"><code class="docutils literal notranslate"><span class="pre">GSage_MME</span></code></a><ul class="nav section-nav flex-column">
@@ -421,7 +420,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#GNN_MME.GSage_MME.num_layers"><code class="docutils literal notranslate"><span class="pre">GSage_MME.num_layers</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#GNN_MME.GSage_MME.drop"><code class="docutils literal notranslate"><span class="pre">GSage_MME.drop</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#GNN_MME.GSage_MME.forward"><code class="docutils literal notranslate"><span class="pre">GSage_MME.forward()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><code class="docutils literal notranslate"><span class="pre">GSage_MME.forward()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -543,12 +541,6 @@ decoded (torch.Tensor): The decoded tensor.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="GNN_MME.GCN_MME.forward">
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subjects_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/GNN_MME.html#GCN_MME.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GNN_MME.GCN_MME.forward" title="Link to this definition">#</a></dt>
-<dd><p>Performs the forward pass of the encoder.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="id0">
-<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subjects_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/GNN_MME.html#GCN_MME.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Link to this definition">#</a></dt>
 <dd><p>Forward pass of the GCN_MME model.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -646,12 +638,6 @@ The forward method performs the forward pass of the encoder.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="GNN_MME.GSage_MME.forward">
 <span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subjects_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/GNN_MME.html#GSage_MME.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#GNN_MME.GSage_MME.forward" title="Link to this definition">#</a></dt>
-<dd><p>Performs the forward pass of the encoder.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="id1">
-<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subjects_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/GNN_MME.html#GSage_MME.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id1" title="Link to this definition">#</a></dt>
 <dd><p>Performs the forward pass of the GSage_MME encoder.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -750,7 +736,6 @@ The forward method performs the forward pass of the encoder.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#GNN_MME.GCN_MME.num_layers"><code class="docutils literal notranslate"><span class="pre">GCN_MME.num_layers</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#GNN_MME.GCN_MME.drop"><code class="docutils literal notranslate"><span class="pre">GCN_MME.drop</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#GNN_MME.GCN_MME.forward"><code class="docutils literal notranslate"><span class="pre">GCN_MME.forward()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">GCN_MME.forward()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#GNN_MME.GSage_MME"><code class="docutils literal notranslate"><span class="pre">GSage_MME</span></code></a><ul class="nav section-nav flex-column">
@@ -760,7 +745,6 @@ The forward method performs the forward pass of the encoder.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#GNN_MME.GSage_MME.num_layers"><code class="docutils literal notranslate"><span class="pre">GSage_MME.num_layers</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#GNN_MME.GSage_MME.drop"><code class="docutils literal notranslate"><span class="pre">GSage_MME.drop</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#GNN_MME.GSage_MME.forward"><code class="docutils literal notranslate"><span class="pre">GSage_MME.forward()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><code class="docutils literal notranslate"><span class="pre">GSage_MME.forward()</span></code></a></li>
 </ul>
 </li>
 </ul>
