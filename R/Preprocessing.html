@@ -172,7 +172,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Multi-Omic Graph Diagnosis (MOGDx) : A data integration tool to perform classification tasks for heterogenous diseases
+                    Multi-Omic Graph Diagnosis (MOGDx)
                 </a>
             </li>
         </ul>
@@ -180,14 +180,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../Processing_in_R.html">Processing in R</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">MOGDx Modality Processing</a></li>
-
-
-
-
-
-
 <li class="toctree-l2"><a class="reference internal" href="Graph_Generation.html">Modality Graph Generation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SNF.html">Similarity Network Fusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SNF.html">Similarity Network Fusion (SNF)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="preprocess_functions.html">Preprocess Functions</a></li>
 </ul>
 </li>
@@ -197,16 +191,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../Python/Preprocess_Functions.html">Preprocess Functions</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Training_MOGDx.html">Training MOGDx</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Executing_MOGDx.html">Executing MOGDx</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Execution/Command_Line.html">Running on Command Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Execution/mogdx.html">MOGDx Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Execution/Jupyter_Notebook.html">Jupyter Notebook</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Training_MOGDx.html">MOGDx Main Functions and Classes</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../MAIN/GNN_MME.html">Graph Neural Network with Multi Modal Encoder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../MAIN/Training.html">Training MOGDx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../MAIN/Utils.html">Utility Functions</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Executing_MOGDx.html">Executing MOGDx</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Execution/Command_Line.html">Running on Command Line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Execution/mogdx.html">MOGDx Execution Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Execution/Jupyter_Notebook.html">MOGDx</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact Details</a></li>
@@ -405,18 +399,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">MOGDx Modality Processing</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-project-and-dataset">Specify Project and Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-project-and-dataset">Specify Project and Dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-file-generation">META File Generation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mrna-pre-processing">mRNA pre-processing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mirna-preprocessing">miRNA preprocessing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dnam-preprocessing">DNAm preprocessing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-rppa-pre-processing">Protein (RPPA) pre-processing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cnv-pre-processing">CNV pre-processing</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-file-generation">META File Generation</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mrna-pre-processing">mRNA pre-processing</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mirna-preprocessing">miRNA preprocessing</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dnam-preprocessing">DNAm preprocessing</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-rppa-pre-processing">Protein (RPPA) pre-processing</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cnv-pre-processing">CNV pre-processing</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -429,18 +422,19 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="mogdx-modality-processing">
 <h1>MOGDx Modality Processing<a class="headerlink" href="#mogdx-modality-processing" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>Code to process different modalities for inclusion in MOGDx pipeline</p>
 <section id="specify-project-and-dataset">
-<h2>Specify Project and Dataset<a class="headerlink" href="#specify-project-and-dataset" title="Link to this heading">#</a></h2>
+<h3>Specify Project and Dataset<a class="headerlink" href="#specify-project-and-dataset" title="Link to this heading">#</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>project &lt;- &#39;BRCA&#39;
 dataset &lt;- &#39;TCGA&#39;
 trait &lt;- &#39;paper_BRCA_Subtype_PAM50&#39;
 </pre></div>
 </div>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="meta-file-generation">
-<h1>META File Generation<a class="headerlink" href="#meta-file-generation" title="Link to this heading">#</a></h1>
+<section id="meta-file-generation">
+<h3>META File Generation<a class="headerlink" href="#meta-file-generation" title="Link to this heading">#</a></h3>
 <p>Meta data is (typically) located in the coldata of the mRNA gene
 expression experiment for TCGA datasets.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>load(paste0(&#39;./../data/TCGA-&#39;,project,&#39;/mRNA/mRNA.rda&#39;))
@@ -456,8 +450,8 @@ write.csv(datMeta , file = paste0(&#39;./../data/TCGA-&#39;,project,&#39;/datMet
 </pre></div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="mrna-pre-processing">
-<h1>mRNA pre-processing<a class="headerlink" href="#mrna-pre-processing" title="Link to this heading">#</a></h1>
+<section id="mrna-pre-processing">
+<h3>mRNA pre-processing<a class="headerlink" href="#mrna-pre-processing" title="Link to this heading">#</a></h3>
 <p>Differential Gene Expression processing pipeline for messenger RNA
 datasets.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Pull in Count Matrices 
@@ -516,8 +510,8 @@ save(datExpr, datMeta, dds, top_genes, file=paste0(&#39;./../data/&#39;,dataset,
 </pre></div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="mirna-preprocessing">
-<h1>miRNA preprocessing<a class="headerlink" href="#mirna-preprocessing" title="Link to this heading">#</a></h1>
+<section id="mirna-preprocessing">
+<h3>miRNA preprocessing<a class="headerlink" href="#mirna-preprocessing" title="Link to this heading">#</a></h3>
 <p>Differential Gene Expression pipeline for micro RNA datasets</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#Pull in count data
 load(paste0(&#39;./../data/TCGA-&#39;,project,&#39;/miRNA/miRNA.rda&#39;))
@@ -602,8 +596,8 @@ save(datExpr, datMeta, dds, top_genes, file=paste0(&#39;./../data/&#39;,dataset,
 </pre></div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="dnam-preprocessing">
-<h1>DNAm preprocessing<a class="headerlink" href="#dnam-preprocessing" title="Link to this heading">#</a></h1>
+<section id="dnam-preprocessing">
+<h3>DNAm preprocessing<a class="headerlink" href="#dnam-preprocessing" title="Link to this heading">#</a></h3>
 <p>Elastic Net Regression and Processing pipeline for DNA methylation
 datasets</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Load CpG Counts ---------------------------------------------------------
@@ -692,8 +686,8 @@ save(cpg_sites , datExpr , datMeta , file = paste0(&#39;./../data/&#39;,dataset,
 </pre></div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="protein-rppa-pre-processing">
-<h1>Protein (RPPA) pre-processing<a class="headerlink" href="#protein-rppa-pre-processing" title="Link to this heading">#</a></h1>
+<section id="protein-rppa-pre-processing">
+<h3>Protein (RPPA) pre-processing<a class="headerlink" href="#protein-rppa-pre-processing" title="Link to this heading">#</a></h3>
 <p>Elastic Net Regression and Processing pipeline for proteomic datasets</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>load(paste0(&#39;./../data/TCGA-&#39;,project,&#39;/RPPA/RPPA.rda&#39;))
 count_mtx &lt;- t(data[  , 6:ncol(data) ])
@@ -768,8 +762,8 @@ save(protein_sites , datExpr , datMeta , file = paste0(&#39;./../data/&#39;,data
 </pre></div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="cnv-pre-processing">
-<h1>CNV pre-processing<a class="headerlink" href="#cnv-pre-processing" title="Link to this heading">#</a></h1>
+<section id="cnv-pre-processing">
+<h3>CNV pre-processing<a class="headerlink" href="#cnv-pre-processing" title="Link to this heading">#</a></h3>
 <p>Elastic Net Regression and Processing pipeline for Copy Number Variation
 datasets</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Read in Count Matrix
@@ -853,6 +847,8 @@ save(cnv_sites , datExpr , datMeta , file = paste0(&#39;./../data/&#39;,dataset,
 </pre></div>
 </div>
 </section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -918,18 +914,17 @@ save(cnv_sites , datExpr , datMeta , file = paste0(&#39;./../data/&#39;,dataset,
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">MOGDx Modality Processing</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-project-and-dataset">Specify Project and Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-project-and-dataset">Specify Project and Dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-file-generation">META File Generation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mrna-pre-processing">mRNA pre-processing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mirna-preprocessing">miRNA preprocessing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dnam-preprocessing">DNAm preprocessing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-rppa-pre-processing">Protein (RPPA) pre-processing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cnv-pre-processing">CNV pre-processing</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-file-generation">META File Generation</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mrna-pre-processing">mRNA pre-processing</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mirna-preprocessing">miRNA preprocessing</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dnam-preprocessing">DNAm preprocessing</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-rppa-pre-processing">Protein (RPPA) pre-processing</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cnv-pre-processing">CNV pre-processing</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>

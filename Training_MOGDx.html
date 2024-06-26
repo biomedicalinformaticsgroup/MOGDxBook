@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Training MOGDx &#8212; MOGDx</title>
+    <title>MOGDx Main Functions and Classes &#8212; MOGDx</title>
   
   
   
@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Graph Neural Network with Multi Modal Encoder" href="MAIN/GNN_MME.html" />
-    <link rel="prev" title="Preprocess Functions" href="Python/Preprocess_Functions.html" />
+    <link rel="prev" title="Jupyter Notebook" href="Execution/Jupyter_Notebook.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -172,7 +172,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Multi-Omic Graph Diagnosis (MOGDx) : A data integration tool to perform classification tasks for heterogenous diseases
+                    Multi-Omic Graph Diagnosis (MOGDx)
                 </a>
             </li>
         </ul>
@@ -180,14 +180,8 @@
 <li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="Processing_in_R.html">Processing in R</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="R/Preprocessing.html">MOGDx Modality Processing</a></li>
-
-
-
-
-
-
 <li class="toctree-l2"><a class="reference internal" href="R/Graph_Generation.html">Modality Graph Generation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="R/SNF.html">Similarity Network Fusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="R/SNF.html">Similarity Network Fusion (SNF)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="R/preprocess_functions.html">Preprocess Functions</a></li>
 </ul>
 </li>
@@ -197,16 +191,16 @@
 <li class="toctree-l2"><a class="reference internal" href="Python/Preprocess_Functions.html">Preprocess Functions</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Training MOGDx</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Executing_MOGDx.html">Executing MOGDx</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Execution/Command_Line.html">Running on Command Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Execution/mogdx.html">MOGDx Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Execution/Jupyter_Notebook.html">Jupyter Notebook</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">MOGDx Main Functions and Classes</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="MAIN/GNN_MME.html">Graph Neural Network with Multi Modal Encoder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MAIN/Training.html">Training MOGDx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MAIN/Utils.html">Utility Functions</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Executing_MOGDx.html">Executing MOGDx</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="Execution/Command_Line.html">Running on Command Line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Execution/mogdx.html">MOGDx Execution Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Execution/Jupyter_Notebook.html">MOGDx</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="contact.html">Contact Details</a></li>
@@ -382,7 +376,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -393,11 +389,27 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Training MOGDx</h1>
+    <h1>MOGDx Main Functions and Classes</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-neural-network-with-multi-modal-encoder-gnnmme">Graph Neural Network with Multi Modal Encoder (GNNMME)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-modal-encoder">Multi Modal Encoder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-convolutional-network">Graph Convolutional Network</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphsage">GraphSage</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training">Training</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utility">Utility</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">Citations</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -407,11 +419,57 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="training-mogdx">
-<h1>Training MOGDx<a class="headerlink" href="#training-mogdx" title="Link to this heading">#</a></h1>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
+  <section class="tex2jax_ignore mathjax_ignore" id="mogdx-main-functions-and-classes">
+<h1>MOGDx Main Functions and Classes<a class="headerlink" href="#mogdx-main-functions-and-classes" title="Link to this heading">#</a></h1>
+<p>We provide a description of the main functions and classes used to train a MOGDx model.</p>
+<section id="graph-neural-network-with-multi-modal-encoder-gnnmme">
+<h2>Graph Neural Network with Multi Modal Encoder (GNNMME)<a class="headerlink" href="#graph-neural-network-with-multi-modal-encoder-gnnmme" title="Link to this heading">#</a></h2>
+<a class="reference internal image-reference" href="_images/gcn-mme.png"><img alt="fishy" class="align-left" src="_images/gcn-mme.png" style="width: 1200px;" /></a>
+<section id="multi-modal-encoder">
+<h3>Multi Modal Encoder<a class="headerlink" href="#multi-modal-encoder" title="Link to this heading">#</a></h3>
+</section>
+<section id="graph-convolutional-network">
+<h3>Graph Convolutional Network<a class="headerlink" href="#graph-convolutional-network" title="Link to this heading">#</a></h3>
+<a class="reference internal image-reference" href="_images/gcn.png"><img alt="fishy" class="align-left" src="_images/gcn.png" style="width: 1200px;" /></a>
+</section>
+<section id="graphsage">
+<h3>GraphSage<a class="headerlink" href="#graphsage" title="Link to this heading">#</a></h3>
+<a class="reference internal image-reference" href="_images/gsage.png"><img alt="fishy" class="align-left" src="_images/gsage.png" style="width: 1200px;" /></a>
+</section>
+</section>
+<section id="training">
+<h2>Training<a class="headerlink" href="#training" title="Link to this heading">#</a></h2>
+<p>Functions used to train and evaluate the MOGDx model. The training implemented follows that outlined by <span id="id1">[<a class="reference internal" href="intro.html#id2" title="William L. Hamilton. Graph Representation Learning. Synthesis Lectures on Artificial Intelligence and Machine Learning. Springer International Publishing, Cham, 2020. ISBN 978-3-031-00460-5 978-3-031-01588-5. URL: https://link.springer.com/10.1007/978-3-031-01588-5 (visited on 2024-03-13), doi:10.1007/978-3-031-01588-5.">Hamilton, 2020</a>]</span>.</p>
+<p>The list of functions are :</p>
+<ul class="simple">
+<li><p>train</p></li>
+<li><p>evaluate</p></li>
+<li><p>confusion_matrix</p></li>
+<li><p>AUROC</p></li>
+</ul>
+</section>
+<section id="utility">
+<h2>Utility<a class="headerlink" href="#utility" title="Link to this heading">#</a></h2>
+<p>Utility functions used to parse input data, load networks from csv or perform utility tasks.</p>
+<p>The list of functions are :</p>
+<ul class="simple">
+<li><p>data_parsing</p></li>
+<li><p>get_gpu_memory</p></li>
+<li><p>indices_removal_adjust</p></li>
+<li><p>network_from_csv</p></li>
+</ul>
+</section>
+<section id="citations">
+<h2>Citations<a class="headerlink" href="#citations" title="Link to this heading">#</a></h2>
+<div class="docutils container" id="id2">
+<div role="list" class="citation-list">
+<div class="citation" id="id3" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">Ham20</a><span class="fn-bracket">]</span></span>
+<p>William L. Hamilton. <em>Graph Representation Learning</em>. Synthesis Lectures on Artificial Intelligence and Machine Learning. Springer International Publishing, Cham, 2020. ISBN 978-3-031-00460-5 978-3-031-01588-5. URL: <a class="reference external" href="https://link.springer.com/10.1007/978-3-031-01588-5">https://link.springer.com/10.1007/978-3-031-01588-5</a> (visited on 2024-03-13), <a class="reference external" href="https://doi.org/10.1007/978-3-031-01588-5">doi:10.1007/978-3-031-01588-5</a>.</p>
 </div>
+</div>
+</div>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -447,12 +505,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Python/Preprocess_Functions.html"
+       href="Execution/Jupyter_Notebook.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Preprocess Functions</p>
+        <p class="prev-next-title">Jupyter Notebook</p>
       </div>
     </a>
     <a class="right-next"
@@ -471,7 +529,28 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-neural-network-with-multi-modal-encoder-gnnmme">Graph Neural Network with Multi Modal Encoder (GNNMME)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-modal-encoder">Multi Modal Encoder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-convolutional-network">Graph Convolutional Network</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphsage">GraphSage</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training">Training</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utility">Utility</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">Citations</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

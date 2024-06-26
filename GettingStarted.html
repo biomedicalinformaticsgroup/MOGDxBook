@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Processing in R" href="Processing_in_R.html" />
-    <link rel="prev" title="Multi-Omic Graph Diagnosis (MOGDx) : A data integration tool to perform classification tasks for heterogenous diseases" href="intro.html" />
+    <link rel="prev" title="Multi-Omic Graph Diagnosis (MOGDx)" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -172,7 +172,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Multi-Omic Graph Diagnosis (MOGDx) : A data integration tool to perform classification tasks for heterogenous diseases
+                    Multi-Omic Graph Diagnosis (MOGDx)
                 </a>
             </li>
         </ul>
@@ -180,14 +180,8 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Getting Started</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="Processing_in_R.html">Processing in R</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="R/Preprocessing.html">MOGDx Modality Processing</a></li>
-
-
-
-
-
-
 <li class="toctree-l2"><a class="reference internal" href="R/Graph_Generation.html">Modality Graph Generation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="R/SNF.html">Similarity Network Fusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="R/SNF.html">Similarity Network Fusion (SNF)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="R/preprocess_functions.html">Preprocess Functions</a></li>
 </ul>
 </li>
@@ -197,16 +191,16 @@
 <li class="toctree-l2"><a class="reference internal" href="Python/Preprocess_Functions.html">Preprocess Functions</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Training_MOGDx.html">Training MOGDx</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Executing_MOGDx.html">Executing MOGDx</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Execution/Command_Line.html">Running on Command Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Execution/mogdx.html">MOGDx Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Execution/Jupyter_Notebook.html">Jupyter Notebook</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Training_MOGDx.html">MOGDx Main Functions and Classes</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="MAIN/GNN_MME.html">Graph Neural Network with Multi Modal Encoder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MAIN/Training.html">Training MOGDx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MAIN/Utils.html">Utility Functions</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Executing_MOGDx.html">Executing MOGDx</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="Execution/Command_Line.html">Running on Command Line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Execution/mogdx.html">MOGDx Execution Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Execution/Jupyter_Notebook.html">MOGDx</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="contact.html">Contact Details</a></li>
@@ -406,17 +400,15 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">Workflow</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-in-r">Workflow in R</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-in-python">Workflow in Python</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#full-pipeline-overview">Full pipeline overview</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-preocessing-and-graph-generation">Pre-preocessing and Graph Generation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-convolutionl-network-with-multi-modal-encoder">Graph Convolutionl Network with Multi Modal Encoder</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-data-download">Step 1 - Data Download</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-execute-mogdx-py">Step 5 - Execute MOGDx.py</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-download">Data Download</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">Citations</a></li>
 </ul>
@@ -437,8 +429,11 @@ document.write(`
 <p>Multi-omic Graph Diagnosis (MOGDx) is a tool for the integration of omic data and classification of heterogeneous diseases. MOGDx exploits a Patient Similarity Network (PSN) framework to integrate omic data using Similarity Network Fusion (SNF) [^fn1]. A single PSN is built per modality. The PSN is built using the most informative features of that modality. The most informative features are found by performing a contrastive analysis between classification targets. For example, in mRNA, differentially expressed genes will be used to construct the PSN. Where suitable, Pearson correlation, otherwise Euclidean distance is measured between these informative features and the network is constructed using the K Nearest Neighbours (KNN) algorithm. SNF is used to combine individual PSN’s into a single network. The fused PSN and the omic datasets are input into the Graph Convultional Network with Multi Modal Encoder, the architecture of which is shown in below. Each omic measure is compressed using a two layer encoder. The compressed encoded layer of each modality is then decoded to a shared latent space using mean pooling. This encourages each modality to learn the same latent space. The shared latent space is the node feature matrix, required for training the GCN, with each row forming a node feature vector. Classification is performed on the fused network using the Graph Convolutional Network (GCN) deep learning algorithm [^fn2].</p>
 <p>GCN is a novel paradigm for learning from both network structure and node features. Heterogeneity in diseases confounds clinical trials, treatments, genetic association and more. Accurate stratification of these diseases is therefore critical to optimize treatment strategies for patients with heterogeneous diseases. Previous research has shown that accurate classification of heterogenous diseases has been achieved by integrating and classifying multi-omic data [^fn3][^fn4][^fn5]. MOGDx improves upon this research. The advantages of MOGDx is that it can handle both a variable number of modalities and missing patient data in one or more modalities. Performance of MOGDx was benchmarked on the BRCA TCGA dataset with competitive performance compared to its counterparts. In summary, MOGDx combines patient similarity network integration with graph neural network learning for accurate disease classification.</p>
 </section>
-<section id="workflow">
-<h2>Workflow<a class="headerlink" href="#workflow" title="Link to this heading">#</a></h2>
+<section id="workflow-in-r">
+<h2>Workflow in R<a class="headerlink" href="#workflow-in-r" title="Link to this heading">#</a></h2>
+</section>
+<section id="workflow-in-python">
+<h2>Workflow in Python<a class="headerlink" href="#workflow-in-python" title="Link to this heading">#</a></h2>
 <section id="full-pipeline-overview">
 <h3>Full pipeline overview<a class="headerlink" href="#full-pipeline-overview" title="Link to this heading">#</a></h3>
 </section>
@@ -448,32 +443,15 @@ document.write(`
 <section id="graph-convolutionl-network-with-multi-modal-encoder">
 <h3>Graph Convolutionl Network with Multi Modal Encoder<a class="headerlink" href="#graph-convolutionl-network-with-multi-modal-encoder" title="Link to this heading">#</a></h3>
 </section>
-<section id="step-1-data-download">
-<h3>Step 1 - Data Download<a class="headerlink" href="#step-1-data-download" title="Link to this heading">#</a></h3>
+</section>
+<section id="data-download">
+<h2>Data Download<a class="headerlink" href="#data-download" title="Link to this heading">#</a></h2>
 <p>Create a folder called <code class="docutils literal notranslate"><span class="pre">data</span></code> and a folder for each dataset with naming convention ‘TCGA-’ e.g. ‘TCGA-BRCA’ inside this folder.</p>
 <p>Use the R script <code class="docutils literal notranslate"><span class="pre">data_download.R</span></code> to download all data changing the project to BRCA/LGG/KICH/KIRC/KICH</p>
-</section>
 </section>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
 <p>A working version of R and Python is required. R version 4.2.2 and Python version 3.9.2 was used to obtain all results.</p>
-<section id="step-5-execute-mogdx-py">
-<h3>Step 5 - Execute <a class="reference external" href="http://MOGDx.py">MOGDx.py</a><a class="headerlink" href="#step-5-execute-mogdx-py" title="Link to this heading">#</a></h3>
-<p>Ensure all expression, meta and graph files for all modalities are in a single folder with naming convention ‘modality_datExpr.csv’/’modality_datMeta.csv’/’modality_graph.csv’ e.g. ‘mRNA_datExpr.csv’/’mRNA_datMeta.csv’/’modality_graph.csv’. <br />
-If performing an analysis on integrated modalities ensure all expression and meta files for the integrated modalities are in the folder. <br />
-e.g. if analysing mRNA &amp; miRNA, ensure mRNA_miRNA_graph.csv , datMeta_mRNA.csv, datMeta_miRNA.csv, datExpr_mRNA.csv and datExper_miRNA.csv are in the same folder. \</p>
-<p>This process will have been done automatically by the creation of the raw folder and running of SNF.R and it is easiest to retain this folder.</p>
-<p>MOGDx is a command line tool. A sample command is : <br />
-<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">MOGDx.py</span> <span class="pre">-i</span> <span class="pre">&quot;/raw_data/raw_BRCA&quot;</span> <span class="pre">-o</span> <span class="pre">&quot;./Output/BRCA/&quot;</span>&#160; <span class="pre">-snf</span> <span class="pre">&quot;mRNA_miRNA_graph.csv&quot;</span> <span class="pre">--n-splits</span> <span class="pre">5</span> <span class="pre">-ld</span> <span class="pre">32</span> <span class="pre">16</span> <span class="pre">--target</span> <span class="pre">&quot;paper_BRCA_Subtype_PAM50&quot;</span> <span class="pre">--index-col</span> <span class="pre">&quot;patient&quot;</span> <span class="pre">--epochs</span> <span class="pre">2000</span> <span class="pre">--lr</span> <span class="pre">0.001</span> <span class="pre">--h-feats</span> <span class="pre">64</span> <span class="pre">--decoder-dim</span> <span class="pre">64</span></code></p>
-<p>-i is the location of the raw data containing all datExpr, datMeta and graph.csv files <br />
--o is the location where the output will be printed <br />
--snf is the name of the fused psn  <br />
-–n-splits is the number of cross validation splits <br />
--ld is the latent dimension per modality. It is order alphabetically thus, mRNA will be compressed to dim of 32 and miRNA to 16  <br />
-–target is the phenotype being classified <br />
-–index-col is the column containing the patient ids</p>
-<p>All other arguments are related to the Graph Convolutional Network with Multi Modal Encoder</p>
-</section>
 </section>
 <section id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">#</a></h2>
@@ -483,7 +461,15 @@ e.g. if analysing mRNA &amp; miRNA, ensure mRNA_miRNA_graph.csv , datMeta_mRNA.c
 </section>
 <section id="citations">
 <h2>Citations<a class="headerlink" href="#citations" title="Link to this heading">#</a></h2>
-<span class="target" id="id1"></span></section>
+<div class="docutils container" id="id1">
+<div role="list" class="citation-list">
+<div class="citation" id="id2" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Ham20<span class="fn-bracket">]</span></span>
+<p>William L. Hamilton. <em>Graph Representation Learning</em>. Synthesis Lectures on Artificial Intelligence and Machine Learning. Springer International Publishing, Cham, 2020. ISBN 978-3-031-00460-5 978-3-031-01588-5. URL: <a class="reference external" href="https://link.springer.com/10.1007/978-3-031-01588-5">https://link.springer.com/10.1007/978-3-031-01588-5</a> (visited on 2024-03-13), <a class="reference external" href="https://doi.org/10.1007/978-3-031-01588-5">doi:10.1007/978-3-031-01588-5</a>.</p>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -522,7 +508,7 @@ e.g. if analysing mRNA &amp; miRNA, ensure mRNA_miRNA_graph.csv , datMeta_mRNA.c
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Multi-Omic Graph Diagnosis (MOGDx) : A data integration tool to perform classification tasks for heterogenous diseases</p>
+        <p class="prev-next-title">Multi-Omic Graph Diagnosis (MOGDx)</p>
       </div>
     </a>
     <a class="right-next"
@@ -551,17 +537,15 @@ e.g. if analysing mRNA &amp; miRNA, ensure mRNA_miRNA_graph.csv , datMeta_mRNA.c
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">Workflow</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-in-r">Workflow in R</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-in-python">Workflow in Python</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#full-pipeline-overview">Full pipeline overview</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-preocessing-and-graph-generation">Pre-preocessing and Graph Generation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-convolutionl-network-with-multi-modal-encoder">Graph Convolutionl Network with Multi Modal Encoder</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-data-download">Step 1 - Data Download</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-execute-mogdx-py">Step 5 - Execute MOGDx.py</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-download">Data Download</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">Citations</a></li>
 </ul>

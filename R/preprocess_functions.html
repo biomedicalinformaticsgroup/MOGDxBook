@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Processing in Python" href="../Processing_in_Python.html" />
-    <link rel="prev" title="Similarity Network Fusion" href="SNF.html" />
+    <link rel="prev" title="Similarity Network Fusion (SNF)" href="SNF.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -172,7 +172,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Multi-Omic Graph Diagnosis (MOGDx) : A data integration tool to perform classification tasks for heterogenous diseases
+                    Multi-Omic Graph Diagnosis (MOGDx)
                 </a>
             </li>
         </ul>
@@ -180,14 +180,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../Processing_in_R.html">Processing in R</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Preprocessing.html">MOGDx Modality Processing</a></li>
-
-
-
-
-
-
 <li class="toctree-l2"><a class="reference internal" href="Graph_Generation.html">Modality Graph Generation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SNF.html">Similarity Network Fusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SNF.html">Similarity Network Fusion (SNF)</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Preprocess Functions</a></li>
 </ul>
 </li>
@@ -197,16 +191,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../Python/Preprocess_Functions.html">Preprocess Functions</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Training_MOGDx.html">Training MOGDx</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Executing_MOGDx.html">Executing MOGDx</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Execution/Command_Line.html">Running on Command Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Execution/mogdx.html">MOGDx Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Execution/Jupyter_Notebook.html">Jupyter Notebook</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Training_MOGDx.html">MOGDx Main Functions and Classes</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../MAIN/GNN_MME.html">Graph Neural Network with Multi Modal Encoder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../MAIN/Training.html">Training MOGDx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../MAIN/Utils.html">Utility Functions</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Executing_MOGDx.html">Executing MOGDx</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Execution/Command_Line.html">Running on Command Line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Execution/mogdx.html">MOGDx Execution Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Execution/Jupyter_Notebook.html">MOGDx</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact Details</a></li>
@@ -406,12 +400,12 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-libraries">Import Libraries</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-nas-from-trait-data">Remove NAs from trait data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-cross-validated-lasso-regression-on-trait-of-interest">Perform cross validated lasso regression on trait of interest</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perfrorm-differential-expression-analysis-and-return-differentially-expressed-genes">Perfrorm differential expression analysis and return differentially expressed genes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-k-nearest-neighbour-calculation-and-return-igraph-object">Perform K Nearest Neighbour calculation and return igraph object</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-knn-graph-generation-plot-graph-and-save-as-long-data-frame">Perform KNN graph generation, plot graph and save as long data frame</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-knn-on-snf-adjacenecy-matrix-and-return-igraph-object">Perform KNN on SNF adjacenecy matrix and return igraph object</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removetraitnas">removeTraitNAs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cvtrait">cvTrait</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diff-expr">diff_expr</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-knn-graph">make.knn.graph</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expr-to-graph">expr.to.graph</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#snf-to-graph">snf.to.graph</a></li>
 </ul>
 </li>
 </ul>
@@ -431,8 +425,9 @@ document.write(`
 pipeline.</p>
 <section id="import-libraries">
 <h2>Import Libraries<a class="headerlink" href="#import-libraries" title="Link to this heading">#</a></h2>
-<section id="remove-nas-from-trait-data">
-<h3>Remove NAs from trait data<a class="headerlink" href="#remove-nas-from-trait-data" title="Link to this heading">#</a></h3>
+<section id="removetraitnas">
+<h3>removeTraitNAs<a class="headerlink" href="#removetraitnas" title="Link to this heading">#</a></h3>
+<p>Remove NAs from trait data</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>removeTraitNAs &lt;- function(traitDF, otherDFs, trait) {
   rowsToKeep &lt;- !is.na(traitDF[[trait]])
   traitDF &lt;- traitDF[rowsToKeep, ]
@@ -452,8 +447,9 @@ pipeline.</p>
 </pre></div>
 </div>
 </section>
-<section id="perform-cross-validated-lasso-regression-on-trait-of-interest">
-<h3>Perform cross validated lasso regression on trait of interest<a class="headerlink" href="#perform-cross-validated-lasso-regression-on-trait-of-interest" title="Link to this heading">#</a></h3>
+<section id="cvtrait">
+<h3>cvTrait<a class="headerlink" href="#cvtrait" title="Link to this heading">#</a></h3>
+<p>Perform cross validated lasso regression on trait of interest</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cvTrait &lt;- function(trainMethyl, trainPhenotypes, trait, nFolds) {
   print(paste0(&#39;Removing rows with missing &#39;, trait, &#39; from training data.&#39;))
   trainRemoveNAResult &lt;- removeTraitNAs(trainPhenotypes, list(trainMethyl = trainMethyl), trait)
@@ -476,8 +472,9 @@ pipeline.</p>
 </pre></div>
 </div>
 </section>
-<section id="perfrorm-differential-expression-analysis-and-return-differentially-expressed-genes">
-<h3>Perfrorm differential expression analysis and return differentially expressed genes<a class="headerlink" href="#perfrorm-differential-expression-analysis-and-return-differentially-expressed-genes" title="Link to this heading">#</a></h3>
+<section id="diff-expr">
+<h3>diff_expr<a class="headerlink" href="#diff-expr" title="Link to this heading">#</a></h3>
+<p>Perfrorm differential expression analysis and return differentially expressed genes</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>diff_expr &lt;- function(count_mtx , datMeta , trait , n_genes , modality) {
   
   # Remove Genes with low level of expression -------------------------------
@@ -561,8 +558,9 @@ pipeline.</p>
 </pre></div>
 </div>
 </section>
-<section id="perform-k-nearest-neighbour-calculation-and-return-igraph-object">
-<h3>Perform K Nearest Neighbour calculation and return igraph object<a class="headerlink" href="#perform-k-nearest-neighbour-calculation-and-return-igraph-object" title="Link to this heading">#</a></h3>
+<section id="make-knn-graph">
+<h3>make.knn.graph<a class="headerlink" href="#make-knn-graph" title="Link to this heading">#</a></h3>
+<p>Perform K Nearest Neighbour calculation and return igraph object</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>make.knn.graph&lt;-function(D,k){
   # calculate euclidean distances between cells
   dist&lt;-as.matrix(dist(D))
@@ -593,8 +591,9 @@ pipeline.</p>
 </pre></div>
 </div>
 </section>
-<section id="perform-knn-graph-generation-plot-graph-and-save-as-long-data-frame">
-<h3>Perform KNN graph generation, plot graph and save as long data frame<a class="headerlink" href="#perform-knn-graph-generation-plot-graph-and-save-as-long-data-frame" title="Link to this heading">#</a></h3>
+<section id="expr-to-graph">
+<h3>expr.to.graph<a class="headerlink" href="#expr-to-graph" title="Link to this heading">#</a></h3>
+<p>Perform KNN graph generation, plot graph and save as long data frame</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>expr.to.graph&lt;-function(datExpr , datMeta , trait , top_genes , modality){
   
   if (modality %in% c(&#39;mRNA&#39; , &#39;miRNA&#39;)) {
@@ -633,8 +632,9 @@ pipeline.</p>
 </pre></div>
 </div>
 </section>
-<section id="perform-knn-on-snf-adjacenecy-matrix-and-return-igraph-object">
-<h3>Perform KNN on SNF adjacenecy matrix and return igraph object<a class="headerlink" href="#perform-knn-on-snf-adjacenecy-matrix-and-return-igraph-object" title="Link to this heading">#</a></h3>
+<section id="snf-to-graph">
+<h3>snf.to.graph<a class="headerlink" href="#snf-to-graph" title="Link to this heading">#</a></h3>
+<p>Perform KNN on SNF adjacenecy matrix and return igraph object</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>snf.to.graph &lt;- function(W , datMeta , trait , idx , sub_mod_list) {
   
   g &lt;- make.knn.graph(W , 15)
@@ -698,7 +698,7 @@ pipeline.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Similarity Network Fusion</p>
+        <p class="prev-next-title">Similarity Network Fusion (SNF)</p>
       </div>
     </a>
     <a class="right-next"
@@ -727,12 +727,12 @@ pipeline.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-libraries">Import Libraries</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-nas-from-trait-data">Remove NAs from trait data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-cross-validated-lasso-regression-on-trait-of-interest">Perform cross validated lasso regression on trait of interest</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perfrorm-differential-expression-analysis-and-return-differentially-expressed-genes">Perfrorm differential expression analysis and return differentially expressed genes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-k-nearest-neighbour-calculation-and-return-igraph-object">Perform K Nearest Neighbour calculation and return igraph object</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-knn-graph-generation-plot-graph-and-save-as-long-data-frame">Perform KNN graph generation, plot graph and save as long data frame</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-knn-on-snf-adjacenecy-matrix-and-return-igraph-object">Perform KNN on SNF adjacenecy matrix and return igraph object</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removetraitnas">removeTraitNAs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cvtrait">cvTrait</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diff-expr">diff_expr</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-knn-graph">make.knn.graph</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expr-to-graph">expr.to.graph</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#snf-to-graph">snf.to.graph</a></li>
 </ul>
 </li>
 </ul>

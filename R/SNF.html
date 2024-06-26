@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Similarity Network Fusion &#8212; MOGDx</title>
+    <title>Similarity Network Fusion (SNF) &#8212; MOGDx</title>
   
   
   
@@ -172,7 +172,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Multi-Omic Graph Diagnosis (MOGDx) : A data integration tool to perform classification tasks for heterogenous diseases
+                    Multi-Omic Graph Diagnosis (MOGDx)
                 </a>
             </li>
         </ul>
@@ -180,14 +180,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../GettingStarted.html">Getting Started</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../Processing_in_R.html">Processing in R</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Preprocessing.html">MOGDx Modality Processing</a></li>
-
-
-
-
-
-
 <li class="toctree-l2"><a class="reference internal" href="Graph_Generation.html">Modality Graph Generation</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Similarity Network Fusion</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Similarity Network Fusion (SNF)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="preprocess_functions.html">Preprocess Functions</a></li>
 </ul>
 </li>
@@ -197,16 +191,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../Python/Preprocess_Functions.html">Preprocess Functions</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Training_MOGDx.html">Training MOGDx</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Executing_MOGDx.html">Executing MOGDx</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Execution/Command_Line.html">Running on Command Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Execution/mogdx.html">MOGDx Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Execution/Jupyter_Notebook.html">Jupyter Notebook</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Training_MOGDx.html">MOGDx Main Functions and Classes</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../MAIN/GNN_MME.html">Graph Neural Network with Multi Modal Encoder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../MAIN/Training.html">Training MOGDx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../MAIN/Utils.html">Utility Functions</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Executing_MOGDx.html">Executing MOGDx</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Execution/Command_Line.html">Running on Command Line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Execution/mogdx.html">MOGDx Execution Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Execution/Jupyter_Notebook.html">MOGDx</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact Details</a></li>
@@ -395,7 +389,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Similarity Network Fusion</h1>
+    <h1>Similarity Network Fusion (SNF)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -405,10 +399,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-the-necessary-libraries">Importing the necessary libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-the-dataset-project-trait-index-column-and-modalities">Specify the dataset, project, trait, index column, and modalities</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-list-of-combination-of-modalities">Generate list of combination of modalities</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-adjacency-matrices-and-metadata-for-each-combination-of-modalities-and-perform-snf">Import adjacency matrices and metadata for each combination of modalities and perform SNF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-the-dataset-project-trait-index-column-and-modalities">Specify the dataset, project, trait, index column, and modalities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-list-of-combination-of-modalities">Generate list of combination of modalities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-adjacency-matrices-and-metadata-for-each-combination-of-modalities-and-perform-snf">Import adjacency matrices and metadata for each combination of modalities and perform SNF</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -420,13 +416,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="similarity-network-fusion">
-<h1>Similarity Network Fusion<a class="headerlink" href="#similarity-network-fusion" title="Link to this heading">#</a></h1>
-<section id="importing-the-necessary-libraries">
-<h2>Importing the necessary libraries<a class="headerlink" href="#importing-the-necessary-libraries" title="Link to this heading">#</a></h2>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="similarity-network-fusion-snf">
+<h1>Similarity Network Fusion (SNF)<a class="headerlink" href="#similarity-network-fusion-snf" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>This file provides code for performing SNF on all available combinations of modalities. By altering the modalities list to include further modalities, SNF will be performed on all possible combinaitons of modalities with a final graph output in the correct naming convention for downstream inclusion in MOGDx pipeline.</p>
 <section id="specify-the-dataset-project-trait-index-column-and-modalities">
-<h2>Specify the dataset, project, trait, index column, and modalities<a class="headerlink" href="#specify-the-dataset-project-trait-index-column-and-modalities" title="Link to this heading">#</a></h2>
+<h3>Specify the dataset, project, trait, index column, and modalities<a class="headerlink" href="#specify-the-dataset-project-trait-index-column-and-modalities" title="Link to this heading">#</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>dataset &lt;- &#39;TCGA&#39;
 project &lt;- &#39;BRCA&#39;
 trait &lt;- c(&#39;paper_BRCA_Subtype_PAM50&#39;)
@@ -438,7 +434,7 @@ modalities &lt;- c( &#39;mRNA&#39; , &#39;miRNA&#39; )
 </div>
 </section>
 <section id="generate-list-of-combination-of-modalities">
-<h2>Generate list of combination of modalities<a class="headerlink" href="#generate-list-of-combination-of-modalities" title="Link to this heading">#</a></h2>
+<h3>Generate list of combination of modalities<a class="headerlink" href="#generate-list-of-combination-of-modalities" title="Link to this heading">#</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Initialize an empty list to store sublists
 mod_list &lt;- list()
 
@@ -458,7 +454,7 @@ for (comb_length in 2:length(modalities)) {
 </div>
 </section>
 <section id="import-adjacency-matrices-and-metadata-for-each-combination-of-modalities-and-perform-snf">
-<h2>Import adjacency matrices and metadata for each combination of modalities and perform SNF<a class="headerlink" href="#import-adjacency-matrices-and-metadata-for-each-combination-of-modalities-and-perform-snf" title="Link to this heading">#</a></h2>
+<h3>Import adjacency matrices and metadata for each combination of modalities and perform SNF<a class="headerlink" href="#import-adjacency-matrices-and-metadata-for-each-combination-of-modalities-and-perform-snf" title="Link to this heading">#</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for (sub_mod_list in mod_list) {
   colnames &lt;- c(&#39;patient&#39; ,  &#39;race&#39; , &#39;gender&#39;  , trait)
   datMeta &lt;- t(data.frame( row.names = colnames))
@@ -529,6 +525,7 @@ for (comb_length in 2:length(modalities)) {
 </div>
 </section>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -594,10 +591,12 @@ for (comb_length in 2:length(modalities)) {
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-the-necessary-libraries">Importing the necessary libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-the-dataset-project-trait-index-column-and-modalities">Specify the dataset, project, trait, index column, and modalities</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-list-of-combination-of-modalities">Generate list of combination of modalities</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-adjacency-matrices-and-metadata-for-each-combination-of-modalities-and-perform-snf">Import adjacency matrices and metadata for each combination of modalities and perform SNF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-the-dataset-project-trait-index-column-and-modalities">Specify the dataset, project, trait, index column, and modalities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-list-of-combination-of-modalities">Generate list of combination of modalities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-adjacency-matrices-and-metadata-for-each-combination-of-modalities-and-perform-snf">Import adjacency matrices and metadata for each combination of modalities and perform SNF</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

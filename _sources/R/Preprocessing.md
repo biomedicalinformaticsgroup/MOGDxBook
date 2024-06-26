@@ -1,14 +1,15 @@
 # MOGDx Modality Processing
 
+## Introduction
 Code to process different modalities for inclusion in MOGDx pipeline
 
-## Specify Project and Dataset
+### Specify Project and Dataset
 
     project <- 'BRCA'
     dataset <- 'TCGA'
     trait <- 'paper_BRCA_Subtype_PAM50'
 
-# META File Generation
+### META File Generation
 
 Meta data is (typically) located in the coldata of the mRNA gene
 expression experiment for TCGA datasets.
@@ -24,7 +25,7 @@ expression experiment for TCGA datasets.
 
     write.csv(datMeta , file = paste0('./../data/TCGA-',project,'/datMeta.csv'))
 
-# mRNA pre-processing
+### mRNA pre-processing
 
 Differential Gene Expression processing pipeline for messenger RNA
 datasets.
@@ -87,7 +88,7 @@ datasets.
     top_genes <- diff_expr_res$top_genes
     save(datExpr, datMeta, dds, top_genes, file=paste0('./../data/',dataset,'/raw/',project,'/mRNA_processed.RData'))
 
-# miRNA preprocessing
+### miRNA preprocessing
 
 Differential Gene Expression pipeline for micro RNA datasets
 
@@ -176,7 +177,7 @@ Differential Gene Expression pipeline for micro RNA datasets
     top_genes <- diff_expr_res$top_genes
     save(datExpr, datMeta, dds, top_genes, file=paste0('./../data/',dataset,'/raw/',project,'/miRNA_processed.RData'))
 
-# DNAm preprocessing
+### DNAm preprocessing
 
 Elastic Net Regression and Processing pipeline for DNA methylation
 datasets
@@ -265,7 +266,7 @@ datasets
     datExpr <- count_mtx
     save(cpg_sites , datExpr , datMeta , file = paste0('./../data/',dataset,'/raw/',project,'/DNAm_processed.RData'))
 
-# Protein (RPPA) pre-processing
+### Protein (RPPA) pre-processing
 
 Elastic Net Regression and Processing pipeline for proteomic datasets
 
@@ -340,7 +341,7 @@ Elastic Net Regression and Processing pipeline for proteomic datasets
     datExpr <- count_mtx
     save(protein_sites , datExpr , datMeta , file = paste0('./../data/',dataset,'/raw/',project,'/RPPA_processed.RData'))
 
-# CNV pre-processing
+### CNV pre-processing
 
 Elastic Net Regression and Processing pipeline for Copy Number Variation
 datasets

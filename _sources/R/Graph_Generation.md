@@ -5,11 +5,11 @@
 This R Markdown file generates K Nearest Neighbour graphs for different
 modalities in a given dataset.
 
-## Setup - Insert Libraries
+### Setup - Insert Libraries
 
     source('~/MOGDx/R/preprocess_functions.R')
 
-## Load Data, Specify Locations, Projects and Modalities
+### Load Data, Specify Locations, Projects and Modalities
 
     trait = 'paper_BRCA_Subtype_PAM50'
     dataset = 'TCGA'
