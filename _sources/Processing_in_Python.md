@@ -15,7 +15,7 @@ kernelspec:
 # Processing in Python
 These files provide the steps for extracting informative features of each modality, generating a network per modality and performing Similarity Network Fusion (SNF). 
 
-Prior to performing processing in python, each modality is required to be saved in the format `{modality}_preprocessed.pkl`. See  {doc}`GettingStarted.md` for more. 
+Prior to performing processing in python, each modality is required to be saved in the format `{modality}_preprocessed.pkl`. See [GettingStarted](./GettingStarted.md) for more. 
 
 ## Step 1 - Preprocessing
 Create a folder called for the dataset called `data` and within this folder copy the preprocessed data into a folder name e.g. TCGA-BRCA.
