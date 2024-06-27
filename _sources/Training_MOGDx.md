@@ -27,6 +27,7 @@ Along with the MME there is a Graph Neural Network (GNN). Currently there are tw
 ```
 
 ### Multi Modal Encoder
+The MME takes any number of modalities and compresses them to an arbitrary dimension, found through hyperparameter searching. The architecture for the MME has been established in similar research in {cite:p}`yang_subtype-gan_2021` and {cite:p}`xu_hierarchical_2019`. 
 
 ### Graph Convolutional Network (GCN)
 GCN, developed by {cite:p}`kipf_semi-supervised_2017`, was implemented from the DGL. For a tutorial on the use of GCN's we refer you to the [DGL Tutorial Page](https://docs.dgl.ai/en/1.1.x/tutorials/blitz/1_introduction.html#sphx-glr-tutorials-blitz-1-introduction-py)
