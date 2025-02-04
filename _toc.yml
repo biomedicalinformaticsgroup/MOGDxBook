@@ -30,6 +30,13 @@ parts:
       - file: Execution/Command_Line
       - file: Execution/mogdx
       - file: Execution/Jupyter_Notebook
+  - caption: MOGDx Model Types
+    numbered: False
+    chapters:
+    - file: MOGDx/Notebooks/MOGDx
+    - file: MOGDx/Notebooks/MOGDx_PNet
+    - file: MOGDx/Notebooks/MOGDx_NetGen
+    - file: MOGDx/Notebooks/MOGDx_Free
   - caption: Model Development
     numbered: False
     chapters:
